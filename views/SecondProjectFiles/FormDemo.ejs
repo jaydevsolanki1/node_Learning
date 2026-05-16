@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Submission Demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-light">
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-7">
+          <div class="card shadow-lg border-0 rounded-3">
+            <!-- Header -->
+            <div class="card-header bg-primary text-white text-center py-3">
+              <h3 class="mb-0">Form Submission</h3>
+            </div>
+
+            <!-- Body -->
+            <div class="card-body p-4">
+              <!-- Success Alert -->
+              <% if (success) { %>
+              <div class="alert alert-success text-center"><%= success %></div>
+              <% } %>
+
+              <!-- Form -->
+              <form action="/Submit" method="POST">
+                <!-- Name -->
+                <div class="mb-3">
+                  <label for="name" class="form-label fw-semibold"
+                    >Full Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    value="<%= name ? name : '' %>"
+                    required
+                  />
+                </div>
+                <!-- Email -->
+                <div class="mb-3">
+                  <label for="email" class="form-label fw-semibold"
+                    >Email address</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    value="<%= email ? email : '' %>"
+                    required
+                  />
+                </div>
+                <!-- Message -->
+                <div class="mb-3">
+                  <label for="message" class="form-label fw-semibold"
+                    >Message</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    name="message"
+                    rows="3"
+                    placeholder="Write your message"
+                    required
+                  >
+                    <%= message ? message : '' %></textarea
+                  >
+                </div>
+                <!-- Submit -->
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-success btn-lg">
+                    Submit Form
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Footer -->
+            <div class="card-footer bg-light text-center text-muted">
+              Node.js + Express.js + EJS Form Demo
+            </div>
+          </div>
+
+          <!-- Submitted Data Section -->
+          <% if (name || email || message) { %>
+          <div class="card mt-4 shadow-sm border-0">
+            <div class="card-header bg-secondary text-white text-center">
+              <h5 class="mb-0">Submitted Details</h5>
+            </div>
+            <div class="card-body">
+              <p><strong>Name:</strong> <%= name %></p>
+              <p><strong>Email:</strong> <%= email %></p>
+              <p><strong>Message:</strong> <%= message %></p>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

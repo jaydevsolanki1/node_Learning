@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+</head>
+<body>
+
+  <h1><%= title %></h1>
+
+  <p><%= animal.description %></p>
+
+  <h2>Fruits</h2>
+
+  <ul>
+    <% items.forEach((item) => { %>
+      <li><%= item %></li>
+    <% }) %>
+  </ul>
+
+  <h2>Persons</h2>
+
+  <% person.forEach((p) => { %>
+    <div>
+      <h3><%= p.Name %></h3>
+      <p>Age: <%= p.Age %></p>
+      <p>City: <%= p.City %></p>
+    </div>
+  <% }) %>
+
+</body>
+</html>
