@@ -1,116 +1,242 @@
 import Contact from "../models/contact.models.js";
+import mongoose from "mongoose";
 
-// ------------------ CONTROLLER FUNCTIONS ------------------
+// ==========================================
+// Error Helpers
+// ==========================================
 
-const getRouter = async (req, res) => {
-  const contacts = await Contact.find();
-  res.render("contacts", {
+const render404 = (res, message = "Page Not Found") => {
+  return res.status(404).render("error/404", {
     layout: "layout",
-    title: "All Contacts",
-    contacts,
+    title: "404 Error",
+    message,
   });
 };
 
-const getContact = (req, res) => {
-  res.render("Components/add_contact", { layout: "layout", title: "Add Contact" });
+const render500 = (res, error) => {
+  console.error(error);
+
+  return res.status(500).render("error/500", {
+    layout: "layout",
+    title: "500 Error",
+    message: error.message || "Internal Server Error",
+  });
 };
 
-const postContact = async (req, res) => {
-  try {
-    await Contact.create({
-      first: req.body.first,
-      last: req.body.last,
-      email: req.body.email,
-      phone: req.body.phone,
-      address: req.body.address,
-    });
+// ==========================================
+// Common Contact Checker
+// ==========================================
 
-    res.redirect("/");
-  } catch (err) {
-    res.send(err.message);
+const findContact = async (id, res) => {
+  // Error 1
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    render404(res, "Invalid Contact ID");
+    return null;
+  }
+
+  const contact = await Contact.findById(id);
+
+  // Error 2
+  if (!contact) {
+    render404(res, "Contact Not Found");
+    return null;
+  }
+
+  return contact;
+};
+
+// ==========================================
+// Home Page
+// ==========================================
+
+const getRouter = async (req, res) => {
+  try {
+    const contacts = await Contact.find();
+
+    res.render("contacts", {
+      layout: "layout",
+      title: "All Contacts",
+      contacts,
+    });
+  } catch (error) {
+    render500(res, error);
   }
 };
 
-const showContact = async (req, res) => {
-  const contact = await Contact.findById(req.params.id);
-  res.render("Components/show_contact", {
+// ==========================================
+// Add Contact Page
+// ==========================================
+
+const getContact = (req, res) => {
+  res.render("Components/add_contact", {
     layout: "layout",
-    title: "Contact Details",
-    contact,
+    title: "Add Contact",
   });
 };
+
+// ==========================================
+// Create Contact
+// ==========================================
+
+const postContact = async (req, res) => {
+  try {
+    await Contact.create(req.body);
+    res.redirect("/");
+  } catch (error) {
+    render500(res, error);
+  }
+};
+
+// ==========================================
+// Show Contact
+// ==========================================
+const showContact = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    if (!id) {
+      return render404(res, "Please provide Contact ID");
+    }
+
+    const contact = await findContact(id, res);
+
+    if (!contact) return;
+
+    res.render("Components/show_contact", {
+      layout: "layout",
+      title: "Contact Details",
+      contact,
+    });
+  } catch (error) {
+    render500(res, error);
+  }
+};
+// ==========================================
+// Edit Contact
+// ==========================================
 
 const editContact = async (req, res) => {
-  const contact = await Contact.findById(req.params.id);
-  res.render("edit_contact", {
-    layout: "layout",
-    title: "Edit Contact",
-    contact,
-  });
+  try {
+    const contact = await findContact(req.params.id, res);
+
+    if (!contact) return;
+
+    res.render("edit_contact", {
+      layout: "layout",
+      title: "Edit Contact",
+      contact,
+    });
+  } catch (error) {
+    render500(res, error);
+  }
 };
+
+// ==========================================
+// Update Contact Form
+// ==========================================
 
 const updateContact = async (req, res) => {
-  const contact = await Contact.findById(req.params.id);
-  res.render("Components/update_contact", {
-    layout: "layout",
-    title: "Update Contact",
-    contact,
-  });
+  try {
+    const contact = await findContact(req.params.id, res);
+
+    if (!contact) return;
+
+    res.render("Components/update_contact", {
+      layout: "layout",
+      title: "Update Contact",
+      contact,
+    });
+  } catch (error) {
+    render500(res, error);
+  }
 };
+
+// ==========================================
+// Save Updated Contact
+// ==========================================
 
 const postupdateContact = async (req, res) => {
-  await Contact.findByIdAndUpdate(req.params.id, {
-    first: req.body.first,
-    last: req.body.last,
-    email: req.body.email,
-    phone: req.body.phone,
-    address: req.body.address,
-  });
-  res.redirect("/");
+  try {
+    const contact = await findContact(req.params.id, res);
+
+    if (!contact) return;
+
+    await Contact.findByIdAndUpdate(
+      req.params.id,
+      {
+        first: req.body.first,
+        last: req.body.last,
+        email: req.body.email,
+        phone: req.body.phone,
+        address: req.body.address,
+      },
+      {
+        new: true,
+        runValidators: true,
+      },
+    );
+
+    res.redirect("/");
+  } catch (error) {
+    render500(res, error);
+  }
 };
 
+// ==========================================
+// Delete Contact
+// ==========================================
+
 const deleteContact = async (req, res) => {
-  await Contact.findByIdAndDelete(req.params.id);
-  res.redirect("/");
+  try {
+    const contact = await findContact(req.params.id, res);
+
+    if (!contact) return;
+
+    await Contact.findByIdAndDelete(req.params.id);
+
+    res.redirect("/");
+  } catch (error) {
+    render500(res, error);
+  }
 };
+
+// ==========================================
+// About Page
+// ==========================================
 
 const aboutBar = (req, res) => {
   res.render("Link_nav/about", {
     layout: "layout",
     title: "About",
-    missionText: "Custom mission text here",
-    visionText: "Custom vision text here",
-    team: [
-      {
-        name: "Ace",
-        role: "CEO",
-        bio: "Leader and visionary",
-        photo: "/images/alice.jpg",
-      },
-      { name: "Zoro", role: "CTO", bio: "Tech guru", photo: "/images/bob.jpg" },
-    ],
   });
 };
+
+// ==========================================
+// NodeJS Page
+// ==========================================
+
 const nodejsBar = (req, res) => {
   res.render("Link_nav/nodejs", {
     layout: "layout",
-    title: "Nodejs",
+    title: "NodeJS",
   });
 };
+
+// ==========================================
+// Contact Page
+// ==========================================
 
 const MaincontactRouter = (req, res) => {
   res.render("Link_nav/contact", {
     layout: "layout",
     title: "Contact",
-    name: null,
-    email: null,
-    message: null,
     success: null,
   });
 };
 
 const submitContact = (req, res) => {
   const { name, email, message } = req.body;
+
   res.render("Link_nav/contact", {
     layout: "layout",
     title: "Contact",
@@ -121,40 +247,116 @@ const submitContact = (req, res) => {
   });
 };
 
+// ==========================================
+// Services Page
+// ==========================================
+
 const serachServices = (req, res) => {
-  const servicesList = [
-    { name: "Web Development", description: "Responsive and modern websites" },
-    { name: "Mobile Apps", description: "iOS and Android applications" },
-    { name: "SEO Optimization", description: "Boost your search rankings" },
+  const services = [
+    {
+      name: "Web Development",
+      description: "Responsive and modern websites",
+    },
+    {
+      name: "Mobile Apps",
+      description: "iOS and Android applications",
+    },
+    {
+      name: "SEO Optimization",
+      description: "Boost your search rankings",
+    },
     {
       name: "UI/UX Design",
       description: "Beautiful and user-friendly designs",
     },
-    { name: "Video Editing", description: "Capture the motion in Camera" },
-    { name: "Graphic Design", description: "Design makes Colourfull life" },
+    {
+      name: "Video Editing",
+      description: "Capture motion professionally",
+    },
+    {
+      name: "Graphic Design",
+      description: "Creative visual designs",
+    },
   ];
 
   res.render("Link_nav/services", {
     layout: "layout",
     title: "Services",
-    services: servicesList,
+    services,
   });
 };
+// router.get("/show_contact", (req, res) => {
+//   render404(res, "Please provide Contact ID");
+// });
 
-// ------------------ EXPORT ALL FUNCTIONS ------------------
+// router.get("/edit_contact", (req, res) => {
+//   render404(res, "Please provide Contact ID");
+// });
+
+// router.get("/update_contact", (req, res) => {
+//   render404(res, "Please provide Contact ID");
+// });
+
+// router.get("/delete_contact", (req, res) => {
+//   render404(res, "Please provide Contact ID");
+// });
 
 export {
   getRouter,
   getContact,
   postContact,
-  updateContact,
   showContact,
-  serachServices,
   editContact,
+  updateContact,
   postupdateContact,
   deleteContact,
   aboutBar,
+  nodejsBar,
   MaincontactRouter,
   submitContact,
-  nodejsBar
+  serachServices,
 };
+
+// --------------------------------------------------------------------------------
+//& ANOTHER WAY TO CODE WRITE AND ABOVE IS UPDATED CODE
+// --------------------------------------------------------------------------------
+
+// const updateContact = async (req, res) => {
+//   try {
+//     const { id } = req.params;
+
+//     // Error 1: Invalid ID
+//     if (!mongoose.Types.ObjectId.isValid(id)) {
+//       return res.status(404).render("error/404", {
+//         layout: "layout",
+//         title: "404 Error",
+//         message: "Invalid Contact ID",
+//       });
+//     }
+
+//     const contact = await Contact.findById(id);
+
+//     // Error 2: Contact Not Found
+//     if (!contact) {
+//       return res.status(404).render("error/404", {
+//         layout: "layout",
+//         title: "404 Error",
+//         message: "Contact Not Found",
+//       });
+//     }
+
+//     // Success
+//     res.render("Components/update_contact", {
+//       layout: "layout",
+//       title: "Update Contact",
+//       contact,
+//     });
+//   } catch (error) {
+//     // Error 3: Server Error
+//     return res.status(500).render("error/500", {
+//       layout: "layout",
+//       title: "500 Error",
+//       message: error.message,
+//     });
+//   }
+// };

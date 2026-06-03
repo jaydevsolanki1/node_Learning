@@ -17,10 +17,10 @@ import json from "stream/consumers";
 // import router from 'express';
 import router from "./routes/contact.route.js";
 import { connectDB } from "./config/database.js";
-    
+
 // create express app
 const app = express();
-const port = 3000;  
+const port = 3000;
 
 // __dirname fix for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -111,7 +111,7 @@ app.use(express.urlencoded({ extended: false }));
 // }
 
 // ---------------- DATABASE CONNECT -----------------
-connectDB()
+connectDB();
 
 // ---------------- ROUTES -----------------
 app.use("/", router);
