@@ -176,6 +176,16 @@ nextPage;
 - EJS
 - Bootstrap
 
+## Middleware Module Completed ✅
+
+- Logger Middleware
+- Authentication Middleware
+- Application-Level Middleware
+- Error Handling Middleware
+- Third-Party Middleware
+
+Learned middleware flow, route protection, request tracking, centralized error handling, and production-ready middleware packages such as Morgan, CORS, and Helmet.
+
 ## Author
 
 Jaydev Solanki

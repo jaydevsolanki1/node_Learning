@@ -21,6 +21,21 @@ import { connectDB } from "./config/database.js";
 //package of pagination from mongoose
 import mongoosePaginate from "mongoose-paginate-v2";
 
+// import middleware router in index file in
+import middlewareRoute from "./middleware/middleware.route.js";
+import applicationMiddleware from "./middleware/application-middleware.js";
+import errorMiddleware from "./middleware/error.middleware.js";
+
+//third party middleware________
+//morgan
+import morgan from "morgan";
+
+// cors
+import cors from "cors";
+
+// helmet
+import helmet from "helmet";
+
 // create express app
 const app = express();
 const port = 3000;
@@ -116,8 +131,17 @@ app.use(express.urlencoded({ extended: false }));
 // ---------------- DATABASE CONNECT -----------------
 connectDB();
 
+// use morgan ,cors
+app.use(morgan("dev"));
+app.use(cors());
+app.use(helmet());
+
 // ---------------- ROUTES -----------------
-app.use("/", router);
+app.use(applicationMiddleware); // Application Level Middleware // because when any navbar link click is triggered and message show on terminal
+app.use("/", middlewareRoute); // ___________routes(middleware_routes) before route because already give to in route file in error perfect for error handling so not reach out now reach out because now sequence change ok
+app.use("/", router); // ___________routes
+app.use(errorMiddleware); // error Middleware // because when any navbar link click is triggered and error show on terminal
+
 // const router = Router();
 
 // Start server
