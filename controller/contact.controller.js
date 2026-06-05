@@ -51,12 +51,43 @@ const findContact = async (id, res) => {
 
 const getRouter = async (req, res) => {
   try {
-    const contacts = await Contact.find();
+    const { page = 1, limit = 5 } = req.query;
+
+    const options = {
+      // page:1,
+      page: parseInt(page),
+      // limit:5
+      limit: parseInt(limit),
+    };
+
+    // const contacts = await Contact.find();
+    const resultC = await Contact.paginate({}, options); //__________paginate is work as plug in from npm for pagination
+
+    // res.send(resultC);___________________check this page how result show like console
 
     res.render("contacts", {
       layout: "layout",
       title: "All Contacts",
-      contacts,
+      // contacts,__________________this line is comment because same line as it is in the last line so comment out to...
+      // totalDocs: 10,
+      totalDocs: resultC.totalDocs,
+      // limit: 5,
+      limit: resultC.limit,
+      // totalPages: 2,
+      totalPages: resultC.totalPages,
+      // page: 1,
+      page: resultC.page,
+      // pagingCounter: 1,
+      pagingCounter: resultC.pagingCounter,
+      // hasPrevPage: false,
+      hasPrevPage: resultC.hasPrevPage,
+      // hasNextPage: true,
+      hasNextPage: resultC.hasNextPage,
+      // prevPage: null,
+      prevPage: resultC.prevPage,
+      // nextPage: 2,
+      nextPage: resultC.nextPage,
+      contacts: resultC.docs,
     });
   } catch (error) {
     render500(res, error);
@@ -208,6 +239,20 @@ const aboutBar = (req, res) => {
   res.render("Link_nav/about", {
     layout: "layout",
     title: "About",
+    team: [
+      {
+        name: "Ace",
+        role: "CEO",
+        bio: "Leader and visionary",
+        photo: "/images/alice.jpg",
+      },
+      {
+        name: "Zoro",
+        role: "CTO",
+        bio: "Tech guru",
+        photo: "/images/bob.jpg",
+      },
+    ],
   });
 };
 
@@ -225,11 +270,15 @@ const nodejsBar = (req, res) => {
 // ==========================================
 // Contact Page
 // ==========================================
-
 const MaincontactRouter = (req, res) => {
   res.render("Link_nav/contact", {
     layout: "layout",
     title: "Contact",
+
+    name: "",
+    email: "",
+    message: "",
+
     success: null,
   });
 };
@@ -285,21 +334,6 @@ const serachServices = (req, res) => {
     services,
   });
 };
-// router.get("/show_contact", (req, res) => {
-//   render404(res, "Please provide Contact ID");
-// });
-
-// router.get("/edit_contact", (req, res) => {
-//   render404(res, "Please provide Contact ID");
-// });
-
-// router.get("/update_contact", (req, res) => {
-//   render404(res, "Please provide Contact ID");
-// });
-
-// router.get("/delete_contact", (req, res) => {
-//   render404(res, "Please provide Contact ID");
-// });
 
 export {
   getRouter,

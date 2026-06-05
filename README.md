@@ -101,6 +101,81 @@ Result:
 
 500 Error Page
 
+## Pagination Feature
+
+This project implements server-side pagination using `mongoose-paginate-v2`.
+
+### Why Pagination?
+
+Pagination improves performance and user experience by loading only a limited number of records at a time instead of fetching the entire dataset.
+
+### Features
+
+- Dynamic page navigation
+- Previous and Next buttons
+- Active page highlighting
+- Configurable records per page
+- Server-side data fetching
+- Optimized MongoDB queries
+
+### How It Works
+
+1. The user clicks a page number.
+2. The page number is sent through query parameters.
+
+```url
+/?page=2&limit=5
+```
+
+3. The controller receives the page and limit values.
+
+```js
+const { page = 1, limit = 5 } = req.query;
+```
+
+4. Mongoose Paginate fetches only the required records.
+
+```js
+const result = await Contact.paginate(
+  {},
+  {
+    page: parseInt(page),
+    limit: parseInt(limit),
+  },
+);
+```
+
+5. Pagination data is passed to the EJS view.
+
+```js
+totalPages;
+page;
+hasPrevPage;
+hasNextPage;
+prevPage;
+nextPage;
+```
+
+6. EJS dynamically generates page buttons and highlights the current page.
+
+### Benefits
+
+- Faster page loading
+- Reduced database load
+- Better scalability
+- Improved user experience
+- Cleaner data presentation
+
+### Technology Used
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- mongoose-paginate-v2
+- EJS
+- Bootstrap
+
 ## Author
 
 Jaydev Solanki

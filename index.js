@@ -18,6 +18,9 @@ import json from "stream/consumers";
 import router from "./routes/contact.route.js";
 import { connectDB } from "./config/database.js";
 
+//package of pagination from mongoose
+import mongoosePaginate from "mongoose-paginate-v2";
+
 // create express app
 const app = express();
 const port = 3000;

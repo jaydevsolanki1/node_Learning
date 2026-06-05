@@ -1,6 +1,9 @@
 // import mongoose library
 import mongoose from "mongoose";
 
+//package : mongoosePaginate from mongoose (npm)
+import mongoosePaginate from "mongoose-paginate-v2";
+
 // define schema for contact
 const contactSchema = new mongoose.Schema({
   // _id: {
@@ -29,6 +32,9 @@ const contactSchema = new mongoose.Schema({
     default: "No address given",
   },
 });
+
+//plugin add from mongoose from npm for pagination
+contactSchema.plugin(mongoosePaginate);
 
 // create model from schema
 // 'Contact' is the name of the model and will correspond to the 'contacts' collection in MongoDB
