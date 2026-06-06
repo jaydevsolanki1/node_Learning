@@ -21,10 +21,13 @@ import { connectDB } from "./config/database.js";
 //package of pagination from mongoose
 import mongoosePaginate from "mongoose-paginate-v2";
 
+//validator
+import validator from "validator";
+
 // import middleware router in index file in
-import middlewareRoute from "./middleware/middleware.route.js";
-import applicationMiddleware from "./middleware/application-middleware.js";
-import errorMiddleware from "./middleware/error.middleware.js";
+import middlewareRoute from "./routes/middleware.route.js";
+import applicationMiddleware from "./middleware/3.application-middleware.js";
+import errorMiddleware from "./middleware/4.error.middleware.js";
 
 //third party middleware________
 //morgan
@@ -35,6 +38,7 @@ import cors from "cors";
 
 // helmet
 import helmet from "helmet";
+import validationRoute from "./routes/validation.route.js";
 
 // create express app
 const app = express();
@@ -54,7 +58,10 @@ app.set("layout", "layout");
 
 // Static files
 app.use(express.static("public"));
-app.use(express.urlencoded({ extended: false }));
+
+app.use(express.json());
+
+app.use(express.urlencoded({ extended: true }));
 
 // // Dummy contacts
 // const contacts = [
@@ -137,6 +144,7 @@ app.use(cors());
 app.use(helmet());
 
 // ---------------- ROUTES -----------------
+app.use("/", validationRoute);
 app.use(applicationMiddleware); // Application Level Middleware // because when any navbar link click is triggered and message show on terminal
 app.use("/", middlewareRoute); // ___________routes(middleware_routes) before route because already give to in route file in error perfect for error handling so not reach out now reach out because now sequence change ok
 app.use("/", router); // ___________routes

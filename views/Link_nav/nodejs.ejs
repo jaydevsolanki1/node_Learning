@@ -65,6 +65,80 @@
       </div>
     </div>
 
+    <!-- Validation -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h3>✅ Validation</h3>
+          <p>
+            Validate form data using validator and express-validator before
+            processing requests.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🌐 REST API -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h3>🌐 REST API</h3>
+          <p>
+            Build RESTful APIs using Express.js and handle JSON data exchange.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔄 Async Programming -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h3>🔄 Async Programming</h3>
+          <p>
+            Understand Callbacks, Promises, Async/Await and asynchronous
+            workflows.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⚠ Error Handling<-->
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h3>⚠ Error Handling</h3>
+          <p>
+            Learn centralized error handling, try-catch, custom errors and
+            middleware.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ☁ Environment Variables<-->
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h3>☁ Environment Variables</h3>
+          <p>Manage sensitive configuration using dotenv and process.env.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🚀 Deployment<-->
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h3>🚀 Deployment</h3>
+          <p>
+            Deploy Node.js applications to production servers and cloud
+            platforms.
+          </p>
+        </div>
+      </div>
+    </div>
+
     <!-- Authentication -->
     <div class="col-md-6 col-lg-4">
       <div class="card shadow-sm h-100">
@@ -78,100 +152,544 @@
     </div>
   </div>
 </div>
-<!-----------------------------------------------MIDDLEWARE_CARD--------------------------------------------------------- -->
 
-<div class="card shadow-lg border-0 rounded-4 mb-4 container">
-  <div class="card-body p-4">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-      <h2 class="fw-bold mb-0">⚙ Middleware Learning Module</h2>
+<!-----------------------------------------------CRUD_CARD--------------------------------------------------------------- -->
+<!-- CRUD MODULE -->
+<div class="container my-5">
+  <div class="card shadow-lg border-0 rounded-4">
+    <div class="card-header bg-dark text-white p-4">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h2 class="fw-bold mb-1">📝 CRUD Operations Mastery</h2>
 
-      <span class="badge bg-success fs-6">Completed </span>
-    </div>
-
-    <p class="text-muted">
-      Middleware is one of the most important concepts in Express.js. It
-      executes between the request and response cycle and is used for logging,
-      authentication, validation, security, and error handling.
-    </p>
-
-    <div class="alert alert-info">
-      <strong>📖 Current Progress:</strong>
-      Completed Logger Middleware and currently learning Authentication
-      Middleware.
-    </div>
-
-    <div class="row g-3 mt-3">
-      <div class="col-md-4">
-        <div class="border rounded p-3 h-100">
-          <h5>✅ Logger Middleware</h5>
-          <p class="small text-muted">
-            Logs request method and URL in terminal.
+          <p class="mb-0 text-light">
+            Complete learning journey of Express CRUD concepts.
           </p>
+        </div>
 
-          <a href="/middleware" class="btn btn-primary btn-sm"> View Demo </a>
+        <span class="badge bg-success fs-6 px-3 py-2"> Completed </span>
+      </div>
+    </div>
+    <div class="card-body p-4">
+      <p class="text-muted">
+        CRUD stands for Create, Read, Update, and Delete. These are the
+        fundamental operations used in database-driven applications. This
+        project demonstrates full CRUD functionality using Node.js, Express.js,
+        MongoDB, Mongoose, and EJS.
+      </p>
+
+      <div class="alert alert-info">
+        <strong>📖 Learning Note:</strong>
+
+        This module covers complete data management including adding contacts,
+        viewing contacts, editing records, deleting records, MongoDB
+        integration, routing, controllers, models, and EJS views.
+      </div>
+
+      <div class="row g-3 mt-3">
+        <!-- CREATE -->
+
+        <div class="col-md-3">
+          <div class="border rounded p-3 h-100">
+            <h5>➕ Create</h5>
+
+            <p class="small text-muted">
+              Add new contact records into MongoDB.
+            </p>
+          </div>
+        </div>
+
+        <!-- READ -->
+
+        <div class="col-md-3">
+          <div class="border rounded p-3 h-100">
+            <h5>📖 Read</h5>
+
+            <p class="small text-muted">
+              Display all stored contacts from database.
+            </p>
+          </div>
+        </div>
+
+        <!-- UPDATE -->
+
+        <div class="col-md-3">
+          <div class="border rounded p-3 h-100">
+            <h5>✏️ Update</h5>
+
+            <p class="small text-muted">Modify existing contact information.</p>
+          </div>
+        </div>
+
+        <!-- DELETE -->
+
+        <div class="col-md-3">
+          <div class="border rounded p-3 h-100">
+            <h5>🗑 Delete</h5>
+
+            <p class="small text-muted">Remove unwanted contact records.</p>
+          </div>
         </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="border rounded p-3 h-100">
-          <h5>⏳ Authentication Middleware</h5>
-          <p class="small text-muted">Protect routes and verify users.</p>
+      <div class="alert alert-success mt-4">
+        <h5>🧠 Technologies Used</h5>
 
-          <a href="/auth-middleware" class="btn btn-primary btn-sm">
-            View Demo
-          </a>
-        </div>
+        <ul class="mb-0">
+          <li>Node.js</li>
+          <li>Express.js</li>
+          <li>MongoDB</li>
+          <li>Mongoose</li>
+          <li>EJS</li>
+          <li>Bootstrap</li>
+        </ul>
       </div>
 
-      <div class="col-md-4">
-        <div class="border rounded p-3 h-100">
-          <h5>🚧 Application Middleware</h5>
-          <p class="small text-muted">Middleware executed for every request.</p>
+      <div class="alert alert-warning">
+        <h5>📚 Concepts Learned</h5>
 
-          <a href="/application-middleware" class="btn btn-primary btn-sm">
-            View Demo
-          </a>
-        </div>
+        <ul class="mb-0">
+          <li>Express Routing</li>
+          <li>MVC Structure</li>
+          <li>Mongoose Models</li>
+          <li>Database Connection</li>
+          <li>CRUD Operations</li>
+          <li>Form Handling</li>
+          <li>EJS Rendering</li>
+          <li>MongoDB Queries</li>
+          <li>Pagination</li>
+        </ul>
       </div>
 
-      <div class="col-md-4">
-        <div class="border rounded p-3 h-100">
-          <h5>🚧 Error Middleware</h5>
-          <p class="small text-muted">Handle application errors gracefully.</p>
-
-          <a href="/error-middleware" class="btn btn-primary btn-sm">
-            View Demo
-          </a>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="border rounded p-3 h-100">
-          <h5>⚡ Built-in Middleware</h5>
-
-          <p class="small text-muted">
-            express.json(), express.urlencoded(), express.static() & etc.
-          </p>
-
-          <a
-            href="/built-in-middleware"
-            class="btn btn-primary btn-sm disabled"
-          >
-            View Demo
-          </a>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="border rounded p-3 h-100">
-          <h5>🚧 Third Party Middleware</h5>
-          <p class="small text-muted">Morgan, CORS, Helmet and others.</p>
-
-          <a href="/third-party-middleware" class="btn btn-primary btn-sm">
-            View Demo
-          </a>
-        </div>
+      <div class="mt-4">
+        <a href="http://localhost:3000/" class="btn btn-success">
+          🚀 Open CRUD Project
+        </a>
       </div>
     </div>
   </div>
 </div>
+
+<!-----------------------------------------------MIDDLEWARE_CARD--------------------------------------------------------- -->
+<div class="container my-5">
+  <div class="card shadow-lg border-0 rounded-4">
+    <div class="card-header bg-dark text-white p-4">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h2 class="fw-bold mb-1">⚙ Express.js Middleware Mastery</h2>
+
+          <p class="mb-0 text-light">
+            Complete learning journey of Express Middleware concepts.
+          </p>
+        </div>
+
+        <span class="badge bg-success fs-6 px-3 py-2"> 100% Completed </span>
+      </div>
+    </div>
+
+    <div class="card-body p-4">
+      <div class="alert alert-info">
+        <strong>📖 About Middleware:</strong>
+        Middleware functions execute during the request-response cycle. They can
+        log requests, authenticate users, validate data, handle errors, serve
+        static files, and much more.
+      </div>
+
+      <div class="alert alert-success">
+        <strong>🎯 Learning Status:</strong>
+
+        Logger Middleware ✔ | Authentication Middleware ✔ | Application
+        Middleware ✔ | Error Middleware ✔ | Built-in Middleware ✔ | Third Party
+        Middleware ✔
+      </div>
+
+      <h4 class="mb-4">📚 Middleware Learning Roadmap</h4>
+
+      <div class="row g-4">
+        <!-- Logger -->
+
+        <div class="col-md-4">
+          <div class="border rounded-4 p-3 h-100">
+            <h5>✅ Logger Middleware</h5>
+
+            <p class="small text-muted">
+              Logs request method and URL in terminal.
+            </p>
+
+            <small class="d-block mb-3 text-secondary">
+              Example: GET /middleware
+            </small>
+
+            <a href="/middleware" class="btn btn-primary btn-sm"> View Demo </a>
+          </div>
+        </div>
+
+        <!-- Authentication -->
+
+        <div class="col-md-4">
+          <div class="border rounded-4 p-3 h-100">
+            <h5>✅ Authentication Middleware</h5>
+
+            <p class="small text-muted">Protects routes and verifies users.</p>
+
+            <small class="d-block mb-3 text-secondary">
+              Login & Access Control
+            </small>
+
+            <a href="/auth-middleware" class="btn btn-primary btn-sm">
+              View Demo
+            </a>
+          </div>
+        </div>
+
+        <!-- Application -->
+
+        <div class="col-md-4">
+          <div class="border rounded-4 p-3 h-100">
+            <h5>✅ Application Middleware</h5>
+
+            <p class="small text-muted">
+              Runs for every request entering the application.
+            </p>
+
+            <small class="d-block mb-3 text-secondary">
+              Visitor Tracking Example
+            </small>
+
+            <a href="/application-middleware" class="btn btn-primary btn-sm">
+              View Demo
+            </a>
+          </div>
+        </div>
+
+        <!-- Error -->
+
+        <div class="col-md-4">
+          <div class="border rounded-4 p-3 h-100">
+            <h5>✅ Error Handling Middleware</h5>
+
+            <p class="small text-muted">
+              Catches and handles application errors.
+            </p>
+
+            <small class="d-block mb-3 text-secondary">
+              Centralized Error Management
+            </small>
+
+            <a href="/error-middleware" class="btn btn-primary btn-sm">
+              View Demo
+            </a>
+          </div>
+        </div>
+
+        <!-- Built In -->
+
+        <div class="col-md-4">
+          <div class="border rounded-4 p-3 h-100">
+            <h5>✅ Built-in Middleware</h5>
+
+            <p class="small text-muted">
+              express.json(), express.urlencoded(), express.static() & etc.
+            </p>
+
+            <small class="d-block mb-3 text-secondary">
+              Express Core Middleware
+            </small>
+
+            <a
+              href="/built-in-middleware"
+              class="btn btn-primary btn-sm disabled"
+            >
+              View Demo
+            </a>
+          </div>
+        </div>
+
+        <!-- Third Party -->
+
+        <div class="col-md-4">
+          <div class="border rounded-4 p-3 h-100">
+            <h5>✅ Third Party Middleware</h5>
+
+            <p class="small text-muted">
+              Morgan, CORS, Helmet and other packages.
+            </p>
+
+            <small class="d-block mb-3 text-secondary">
+              External Middleware Packages
+            </small>
+
+            <a href="/third-party-middleware" class="btn btn-primary btn-sm">
+              View Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-4" />
+
+      <div class="alert alert-warning">
+        <h5>🧠 Key Concepts Learned</h5>
+
+        <ul class="mb-0">
+          <li>Request → Middleware → Controller → Response Flow</li>
+          <li>Custom Middleware Creation</li>
+          <li>Application Level Middleware</li>
+          <li>Route Level Middleware</li>
+          <li>Error Handling Middleware</li>
+          <li>Authentication & Authorization</li>
+          <li>Built-in Express Middleware</li>
+          <li>Third Party Middleware Packages</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-----------------------------------------------Validation_CARD--------------------------------------------------------- -->
+
+<div class="container my-5">
+  <div class="card shadow-lg border-0 rounded-4">
+    <div class="card-header bg-dark text-white p-4">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h2 class="fw-bold mb-1">✅ Form Validation Mastery</h2>
+          <p class="mb-0">
+            Learn how to validate user input before processing data.
+          </p>
+        </div>
+
+        <span class="badge bg-success text-light fs-6 px-3 py-2">
+          Completed
+        </span>
+      </div>
+    </div>
+
+    <div class="d-flex gap-4 m-4 justify-content-center">
+      <div class="row g-4 mt-3">
+        <!-- Validator -->
+
+        <div class="col-md-6">
+          <div class="card border-success shadow-sm h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">📦 validator</h5>
+
+                <span class="badge bg-success"> Utility Package </span>
+              </div>
+
+              <hr />
+
+              <p class="text-muted mb-0">
+                Standalone npm package used to validate email, mobile numbers,
+                URLs, passwords, empty fields, and strings manually using
+                JavaScript functions.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Express Validator -->
+
+        <div class="col-md-6">
+          <div class="card border-primary shadow-sm h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">🚀 express-validator</h5>
+
+                <span class="badge bg-primary"> Express Middleware </span>
+              </div>
+
+              <hr />
+
+              <p class="text-muted mb-0">
+                Express middleware package used for validating request data
+                directly in routes using validation chains and automatic error
+                handling.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- </div> -->
+    </div>
+
+    <div class="alert alert-primary mt-4 m-3">
+      <h5>💡 Validator vs Express Validator</h5>
+
+      <ul class="mb-0">
+        <li>
+          <strong>validator:</strong> Individual validation functions. Example:
+          isEmail(), isMobilePhone(), isURL()
+        </li>
+
+        <li>
+          <strong>express-validator:</strong> Express middleware package used
+          directly inside routes for request validation.
+        </li>
+      </ul>
+    </div>
+    <div class="card-body p-4">
+      <div class="alert alert-info">
+        <strong>📖 About Validation:</strong>
+        Validation ensures users submit correct and safe data before it reaches
+        the database or server logic.
+      </div>
+
+      <div class="alert alert-success">
+        <strong>🎯 Current Learning:</strong>
+
+        Validator Package ✔ | Form Validation ✔ | Email Validation ✔ | Password
+        Validation ✔ | Required Fields ✔
+      </div>
+
+      <h4 class="mb-4">📚 Validation Concepts</h4>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="border rounded-4 p-3 h-100">
+            <h5>👤 Name Validation</h5>
+
+            <p class="small text-muted">Prevent empty name fields.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="border rounded-4 p-3 h-100">
+            <h5>📧 Email Validation</h5>
+
+            <p class="small text-muted">Verify correct email format.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="border rounded-4 p-3 h-100">
+            <h5>🔒 Password Validation</h5>
+
+            <p class="small text-muted">Minimum length and security checks.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="border rounded-4 p-3 h-100">
+            <h5>📱 Mobile Validation</h5>
+
+            <p class="small text-muted">Validate mobile number format.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="border rounded-4 p-3 h-100">
+            <h5>🎂 Age Validation</h5>
+
+            <p class="small text-muted">Check valid age range.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="border rounded-4 p-3 h-100">
+            <h5>⚡ Middleware Validation</h5>
+
+            <p class="small text-muted">
+              Validate data before controller execution.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-4" />
+
+      <div class="alert alert-warning">
+        <h5>🧠 What I Learned</h5>
+
+        <ul class="mb-0">
+          <li>validator npm package</li>
+          <li>express-validator package</li>
+          <li>req.body validation</li>
+          <li>Required field checking</li>
+          <li>Email validation</li>
+          <li>Password validation</li>
+          <li>Custom middleware validation</li>
+          <li>Form submission handling</li>
+          <li>Error response generation</li>
+        </ul>
+      </div>
+
+      <hr class="my-4" />
+
+      <h4 class="mb-3">📝 Validation Demo Form</h4>
+
+      <form action="/validation" method="POST">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Full Name</label>
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              placeholder="Enter Full Name"
+            />
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Email</label>
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              placeholder="Enter Email"
+            />
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Password</label>
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              placeholder="Minimum 6 Characters"
+            />
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Mobile</label>
+            <input
+              type="text"
+              name="mobile"
+              class="form-control"
+              placeholder="Enter 10 Digit Mobile Number"
+              maxlength="10"
+              pattern="[0-9]{10}"
+              required
+            />
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Age</label>
+            <input
+              type="number"
+              name="age"
+              class="form-control"
+              placeholder="Enter Age"
+            />
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Gender</label>
+
+            <select class="form-select" name="gender">
+              <option value="">Select Gender</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn btn-success">✅ Validate & Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+<!-----------------------------------------------***************--------------------------------------------------------- -->

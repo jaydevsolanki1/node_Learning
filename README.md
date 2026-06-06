@@ -186,6 +186,61 @@ nextPage;
 
 Learned middleware flow, route protection, request tracking, centralized error handling, and production-ready middleware packages such as Morgan, CORS, and Helmet.
 
+## ✅ Validation Module Added
+
+### Overview
+
+This module demonstrates how to validate user input in a Node.js and Express.js application before processing data.
+
+### Features Implemented
+
+- Name Validation
+- Email Validation
+- Password Validation
+- Mobile Number Validation
+- Age Validation
+- Gender Validation
+- Required Field Checking
+- Custom Validation Logic
+
+### Packages Covered
+
+#### validator
+
+A standalone npm package used for validating:
+
+- Email Addresses
+- Mobile Numbers
+- URLs
+- Password Rules
+- Empty Fields
+- String Data
+
+#### express-validator
+
+An Express middleware package that provides validation chains and request validation directly inside routes.
+
+### Learning Outcomes
+
+- Form Validation
+- Request Body Validation
+- Error Handling
+- Input Sanitization
+- Middleware-Based Validation
+- Server-Side Data Verification
+
+### Technologies Used
+
+- Node.js
+- Express.js
+- EJS
+- Bootstrap
+- Validator
+
+### Status
+
+✅ Completed Successfully
+
 ## Author
 
 Jaydev Solanki
