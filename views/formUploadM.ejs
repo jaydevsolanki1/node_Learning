@@ -1,0 +1,42 @@
+
+
+<% if (docs) { %>
+
+<hr>
+
+<h4>✅ Uploaded Document</h4>
+
+<a
+  href="<%= docs %>"
+  target="_blank"
+  class="btn btn-primary"
+>
+  Open Document
+</a>
+
+<p class="mt-2">
+  <%= docs %>
+</p>
+<p class="fw-bold">
+  👤 Uploaded By:
+  <%= uploadName %>
+</p>
+<% } %>
+
+
+<% if (image) { %>
+    
+    <hr>
+    
+    <div class="text-center">
+      <h4 class="mb-3">✅ Uploaded Image</h4>
+    
+      <img
+        src="<%= image %>"
+        alt="Uploaded Image"
+        class="img-fluid rounded shadow"
+        width="300"
+      >
+    </div>
+    
+    <% } %>

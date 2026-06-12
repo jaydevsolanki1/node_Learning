@@ -241,6 +241,130 @@ An Express middleware package that provides validation chains and request valida
 
 ✅ Completed Successfully
 
+# 📚 Topic: File Upload (Multer)
+
+## What I Learned
+
+- Learned Multer middleware setup
+- Implemented single file upload
+- Implemented multiple file upload
+- Implemented image upload validation
+- Implemented document upload validation
+- Learned file size restrictions
+- Learned req.file and req.files
+- Learned upload.single(), upload.array(), and upload.fields()
+- Practiced storing uploaded file paths in MongoDB
+- Understood multipart/form-data handling
+
+## Key Concepts
+
+- Multer
+- diskStorage()
+- fileFilter()
+- upload.single()
+- upload.array()
+- upload.fields()
+- req.file
+- req.files
+- File Validation
+- File Size Limits
+
+## Real Project Use Cases
+
+- User Profile Image Upload
+- Resume Upload
+- Contact Form Attachments
+- Gallery Management
+- Blog Featured Images
+- Admin Dashboard File Management
+
+## Git Commit
+
+git commit -m "Learned Multer file uploads with validation and multiple file handling"
+
+## Status
+
+✅ Topic Completed
+
+# 📚 Topic: Validator Package
+
+## What I Learned
+
+- Learned input validation
+- Learned data sanitization
+- Implemented email validation
+- Implemented password validation
+- Implemented form validation
+- Improved application security
+
+## Key Concepts
+
+- validator.isEmail()
+- validator.isStrongPassword()
+- validator.escape()
+- validator.trim()
+
+## Real Project Use Cases
+
+- Registration Forms
+- Login Forms
+- Contact Forms
+- User Profile Updates
+- Authentication Systems
+
+## Git Commit
+
+git commit -m "Learned validator package and input validation techniques"
+
+## Status
+
+✅ Topic Completed
+
+# 📚 Topic: File Upload (Multer)
+
+## What I Learned
+
+- Learned Multer middleware setup
+- Implemented single file upload
+- Implemented multiple file upload
+- Implemented image upload validation
+- Implemented document upload validation
+- Learned file size restrictions
+- Learned req.file and req.files
+- Learned upload.single(), upload.array(), and upload.fields()
+- Practiced storing uploaded file paths in MongoDB
+- Understood multipart/form-data handling
+
+## Key Concepts
+
+- Multer
+- diskStorage()
+- fileFilter()
+- upload.single()
+- upload.array()
+- upload.fields()
+- req.file
+- req.files
+- File Validation
+- File Size Limits
+
+## Real Project Use Cases
+
+- User Profile Image Upload
+- Resume Upload
+- Contact Form Attachments
+- Gallery Management
+- Blog Featured Images
+- Admin Dashboard File Management
+
+## Git Commit
+
+git commit -m "Learned Multer file uploads with validation and multiple file handling"
+
+## Status
+
+✅ Topic Completed
+
 ## Author
 
 Jaydev Solanki

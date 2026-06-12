@@ -9,7 +9,7 @@ import {
 
 const validationRoute = express.Router();
 
-validationRoute.get("validation", validationForm);
+validationRoute.get("/validation", validationForm);
 validationRoute.post("/validation", validationMiddleware, validationSubmit);
 
 export default validationRoute;

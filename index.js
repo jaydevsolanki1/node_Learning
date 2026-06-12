@@ -9,7 +9,7 @@ import { fileURLToPath } from "url";
 // import mongoose module
 import mongoose from "mongoose";
 // import console module
-import log from "console";
+import log, { error } from "console";
 // import Contact model
 import Contact from "./models/contact.models.js";
 import json from "stream/consumers";
@@ -39,6 +39,11 @@ import cors from "cors";
 // helmet
 import helmet from "helmet";
 import validationRoute from "./routes/validation.route.js";
+import {
+  fileUploadRoute,
+  fileUploadRouteM,
+} from "./routes/fileUploadRoute.route.js";
+import { MinKey } from "mongodb";
 
 // create express app
 const app = express();
@@ -138,13 +143,88 @@ app.use(express.urlencoded({ extended: true }));
 // ---------------- DATABASE CONNECT -----------------
 connectDB();
 
+// -------------------------------------------------------------------------------------------
+
+import { body, validationResult } from "express-validator";
+
+var validationRegistration = [
+  body("userName")
+    .notEmpty()
+    .withMessage("Name is Required !")
+    .isLength({ min: 3 })
+    .withMessage("must be minimum 3 Character use !!")
+    .trim()
+    .isAlpha()
+    .withMessage("must be contain only Alfa letter use !!")
+    .custom((value) => {
+      if (value == "admin") {
+        throw new Error("username is not use admin keyword");
+      }
+      return true;
+    })
+    .customSanitizer((value) => {
+      return value.toLowerCase();
+    }),
+
+  body("userEmail").isEmail().withMessage("Invalid Email").normalizeEmail(),
+
+  body("userPassword")
+    .isLength({ min: 5, max: 10 })
+    .withMessage("must be between 5 to 10 Character Required")
+    .isStrongPassword()
+    .withMessage("password must be strong"),
+
+  body("userMobile")
+    .isLength({ min: 10, max: 10 })
+    .withMessage("must be enter 10 number  please !"),
+
+  body("userAge")
+    .isNumeric()
+    .withMessage("Age is must be number")
+    .isInt({ min: 18 })
+    .withMessage("Age must be 18 +"),
+  body("userGender")
+    .isIn(["Male", "Female", "Other"])
+    .withMessage("Gender must be male or female or others"),
+];
+
+// validation form utilize package use and under is express middleware use ok
+app.get("/nodejs", (req, res) => {
+  res.render("Link_nav/nodejs", {
+    err: [],
+    image: null,
+  });
+});
+
+app.post("/validationUtilizeFormS", validationRegistration, (req, res) => {
+  const err = validationResult(req);
+  console.log(err.array());
+  // if (!errors.isEmpty()) {
+  //   return res.status(400).json(errors.array());
+  // }
+
+  // res.send("Form Submitted Successfully");
+  // ________________chatgpt if conditions use
+
+  // ------------------or----------------------
+
+  if (err.isEmpty()) {
+    return res.send(req.body);
+  }
+  return res.render("Link_nav/nodejs", { err: err.array() });
+  // ________________yahoo_baba if conditions use
+});
+// -------------------------------------------------------------------------------------------
+
 // use morgan ,cors
 app.use(morgan("dev"));
 app.use(cors());
 app.use(helmet());
 
 // ---------------- ROUTES -----------------
-app.use("/", validationRoute);
+app.use("/", fileUploadRoute); //first form
+app.use("/", fileUploadRouteM); //second form
+app.use("/", validationRoute); // is the form validations to apply on custom and express validation use when form is submission use
 app.use(applicationMiddleware); // Application Level Middleware // because when any navbar link click is triggered and message show on terminal
 app.use("/", middlewareRoute); // ___________routes(middleware_routes) before route because already give to in route file in error perfect for error handling so not reach out now reach out because now sequence change ok
 app.use("/", router); // ___________routes

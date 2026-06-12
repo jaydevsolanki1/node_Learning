@@ -78,6 +78,7 @@
       </div>
     </div>
 
+ 
     <!-- 🌐 REST API -->
     <div class="col-md-6 col-lg-4">
       <div class="card shadow-sm h-100">
@@ -620,7 +621,107 @@
 
       <h4 class="mb-3">📝 Validation Demo Form</h4>
 
+      <h5>validator (Utility Package)</h5>
+      <br>
+      
+     <% if (typeof err !== 'undefined' && err.length > 0) { %>
+
+     <div class="row mb-4">
+         <div class="col-12">
+       
+           <div class="alert alert-danger">
+       
+             <ul class="mb-0">
+       
+               <% err.forEach(error => { %>
+       
+                 <li><%= error.msg %></li>
+       
+               <% }) %>
+       
+             </ul>
+       
+           </div>
+
+  </div>
+    </div>
+
+<% } %>
+
+          <form action="/validationUtilizeFormS" method="POST">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Full Name</label>
+            <input
+              type="text"
+              name="userName"
+              class="form-control"
+              placeholder="Enter Full Name"
+            />
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Email</label>
+            <input
+              type="email"
+              name="userEmail"
+              class="form-control"
+              placeholder="Enter Email"
+            />
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Password</label>
+            <input
+              type="password"
+              name="userPassword"
+              class="form-control"
+              placeholder="Minimum 6 Characters"
+            />
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Mobile</label>
+            <input
+              type="text"
+              name="userMobile"
+              class="form-control"
+              placeholder="Enter 10 Digit Mobile Number"
+              maxlength="10"
+              pattern="[0-9]{10}"
+              
+            />
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Age</label>
+            <input
+              type="number"
+              name="userAge"
+              class="form-control"
+              placeholder="Enter Age"
+            />
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Gender</label>
+
+            <select class="form-select" name="userGender">
+              <option value="">Select Gender</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn btn-success">✅ Validate & Submit</button>
+      </form>
+      <hr>
+     
       <form action="/validation" method="POST">
+        <h5>express-validator (express-middleware)</h5>
+        <br>
         <div class="row">
           <div class="col-md-6 mb-3">
             <label class="form-label">Full Name</label>
@@ -661,7 +762,7 @@
               placeholder="Enter 10 Digit Mobile Number"
               maxlength="10"
               pattern="[0-9]{10}"
-              required
+               
             />
           </div>
 
@@ -692,4 +793,147 @@
     </div>
   </div>
 </div>
-<!-----------------------------------------------***************--------------------------------------------------------- -->
+<!-----------------------------------------------File-Uploaded_Card--------------------------------------------------------- -->
+<div class="container mt-5">
+
+  <div class="card shadow-lg border-0 rounded-4">
+
+    <div class="card-header bg-dark text-white p-3">
+      <h2 class="mb-0">📤 File Upload Demo</h2>
+    </div>
+
+    <div class="card-body">
+<hr>
+<h4>Multer package but use as a express-middleware with file Uploaded</h4>
+
+<br>
+      <form
+        action="/formUpload"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+
+        <div class="mb-3">
+          <label class="form-label fw-bold">
+            Select Image
+          </label>
+
+          <input
+            type="file"
+            name="image"
+            class="form-control"
+            accept=".jpg,.jpeg,.png,.webp"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-success">
+          📤 Upload Image
+        </button>
+
+      </form>
+
+          <% if (typeof image !== 'undefined' && image) { %>
+    
+    <hr>
+    
+    <div class="text-center">
+      <h4 class="mb-3">✅ Uploaded Image</h4>
+    
+      <img
+        src="<%= image %>"
+        alt="Uploaded Image"
+        class="img-fluid rounded shadow"
+        width="300"
+      >
+    </div>
+    
+    <% } %>
+    
+        </div>
+
+
+    <div class="card-body">
+      <hr>
+      <h4>Multer package with file Uploaded</h4>
+      <br>
+
+       <% if (typeof error !== "undefined" && error) { %>
+
+        <div class="alert alert-danger">
+          <%= error %>
+        </div>
+
+      <% } %>
+  <form
+        action="/formUploadM"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+
+        <div class="mb-3">
+          <label class="form-label fw-bold">
+            User Name 
+          </label>
+
+          <input
+            type="text"
+            name="uploadName"
+            class="form-control"
+            placeholder="Enter Your Name"
+            required
+          />
+        </div>
+
+       
+<div class="mb-3 mt-3">
+  <label class="form-label fw-bold">
+    Select Document
+  </label>
+
+  <input
+    type="file"
+    name="docs"
+    class="form-control"
+    accept=".pdf,.doc,.docx,.txt,.xlsx,.xls,.ppt,.pptx"
+    required
+  />
+</div>
+
+<button type="submit" class="btn btn-success">
+  📄 Upload Document
+</button>
+
+</form>
+<% if (typeof docs !== "undefined" && docs) { %>
+
+<hr>
+
+<div class="text-center">
+
+  <h4 class="mb-3">
+    ✅ Uploaded Document
+  </h4>
+
+  <a
+    href="<%= docs %>"
+    target="_blank"
+    class="btn btn-primary me-2"
+  >
+    📄 Open Document
+  </a>
+
+  <a
+    href="<%= docs %>"
+    download
+    class="btn btn-success"
+  >
+    ⬇ Download
+  </a>
+
+</div>
+
+<% } %>
+</div>
+</div>
+</div>
