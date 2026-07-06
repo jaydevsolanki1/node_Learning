@@ -144,7 +144,7 @@ app.use(express.urlencoded({ extended: true }));
 connectDB();
 
 // -------------------------------------------------------------------------------------------
-
+// without middleware and use express validator
 import { body, validationResult } from "express-validator";
 
 var validationRegistration = [

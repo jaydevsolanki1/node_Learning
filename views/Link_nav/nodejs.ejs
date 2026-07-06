@@ -78,7 +78,7 @@
       </div>
     </div>
 
- 
+
     <!-- 🌐 REST API -->
     <div class="col-md-6 col-lg-4">
       <div class="card shadow-sm h-100">
@@ -104,7 +104,7 @@
       </div>
     </div>
 
-    <!-- ⚠ Error Handling<-->
+    <!-- ⚠ Error Handling -->
     <div class="col-md-6 col-lg-4">
       <div class="card shadow-sm h-100">
         <div class="card-body">
@@ -117,7 +117,7 @@
       </div>
     </div>
 
-    <!-- ☁ Environment Variables<-->
+    <!-- ☁ Environment Variables  -->
     <div class="col-md-6 col-lg-4">
       <div class="card shadow-sm h-100">
         <div class="card-body">
@@ -127,7 +127,7 @@
       </div>
     </div>
 
-    <!-- 🚀 Deployment<-->
+    <!-- 🚀 Deployment -->
     <div class="col-md-6 col-lg-4">
       <div class="card shadow-sm h-100">
         <div class="card-body">
@@ -263,7 +263,7 @@
       </div>
 
       <div class="mt-4">
-        <a href="http://localhost:3000/" class="btn btn-success">
+        <a href="/" class="btn btn-success">
           🚀 Open CRUD Project
         </a>
       </div>
@@ -397,10 +397,7 @@
               Express Core Middleware
             </small>
 
-            <a
-              href="/built-in-middleware"
-              class="btn btn-primary btn-sm disabled"
-            >
+            <a href="/built-in-middleware" class="btn btn-primary btn-sm disabled">
               View Demo
             </a>
           </div>
@@ -468,6 +465,7 @@
 
     <div class="d-flex gap-4 m-4 justify-content-center">
       <div class="row g-4 mt-3">
+
         <!-- Validator -->
 
         <div class="col-md-6">
@@ -513,7 +511,7 @@
         </div>
       </div>
 
-      <!-- </div> -->
+
     </div>
 
     <div class="alert alert-primary mt-4 m-3">
@@ -622,174 +620,122 @@
       <h4 class="mb-3">📝 Validation Demo Form</h4>
 
       <h5>validator (Utility Package)</h5>
-      <br>
-      
-     <% if (typeof err !== 'undefined' && err.length > 0) { %>
+      </br>
 
-     <div class="row mb-4">
-         <div class="col-12">
-       
-           <div class="alert alert-danger">
-       
-             <ul class="mb-0">
-       
-               <% err.forEach(error => { %>
-       
-                 <li><%= error.msg %></li>
-       
-               <% }) %>
-       
-             </ul>
-       
-           </div>
+      <% if (typeof err !=='undefined' && err.length> 0) { %>
 
-  </div>
-    </div>
+        <div class="row mb-4">
+          <div class="col-12">
 
-<% } %>
+            <div class="alert alert-danger">
+
+              <ul class="mb-0">
+
+                <% err.forEach(error=> { %>
+
+                  <li>
+                    <%= error.msg %>
+                  </li>
+
+                  <% }) %>
+
+              </ul>
+
+            </div>
+
+          </div>
+        </div>
+
+        <% } %>
 
           <form action="/validationUtilizeFormS" method="POST">
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Full Name</label>
-            <input
-              type="text"
-              name="userName"
-              class="form-control"
-              placeholder="Enter Full Name"
-            />
-          </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Full Name</label>
+                <input type="text" name="userName" class="form-control" placeholder="Enter Full Name" />
+              </div>
 
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Email</label>
-            <input
-              type="email"
-              name="userEmail"
-              class="form-control"
-              placeholder="Enter Email"
-            />
-          </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" name="userEmail" class="form-control" placeholder="Enter Email" />
+              </div>
 
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Password</label>
-            <input
-              type="password"
-              name="userPassword"
-              class="form-control"
-              placeholder="Minimum 6 Characters"
-            />
-          </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" name="userPassword" class="form-control" placeholder="Minimum 6 Characters" />
+              </div>
 
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Mobile</label>
-            <input
-              type="text"
-              name="userMobile"
-              class="form-control"
-              placeholder="Enter 10 Digit Mobile Number"
-              maxlength="10"
-              pattern="[0-9]{10}"
-              
-            />
-          </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Mobile</label>
+                <input type="text" name="userMobile" class="form-control" placeholder="Enter 10 Digit Mobile Number"
+                  maxlength="10" pattern="[0-9]{10}" />
+              </div>
 
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Age</label>
-            <input
-              type="number"
-              name="userAge"
-              class="form-control"
-              placeholder="Enter Age"
-            />
-          </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Age</label>
+                <input type="number" name="userAge" class="form-control" placeholder="Enter Age" />
+              </div>
 
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Gender</label>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Gender</label>
 
-            <select class="form-select" name="userGender">
-              <option value="">Select Gender</option>
-              <option>Male</option>
-              <option>Female</option>
-              <option>Other</option>
-            </select>
-          </div>
-        </div>
+                <select class="form-select" name="userGender">
+                  <option value="">Select Gender</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
 
-        <button class="btn btn-success">✅ Validate & Submit</button>
-      </form>
-      <hr>
-     
-      <form action="/validation" method="POST">
-        <h5>express-validator (express-middleware)</h5>
-        <br>
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Full Name</label>
-            <input
-              type="text"
-              name="name"
-              class="form-control"
-              placeholder="Enter Full Name"
-            />
-          </div>
+            <button class="btn btn-success">✅ Validate & Submit</button>
+          </form>
+          <hr>
 
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Email</label>
-            <input
-              type="email"
-              name="email"
-              class="form-control"
-              placeholder="Enter Email"
-            />
-          </div>
+          <form action="/validation" method="POST">
+            <h5>express-validator (express-middleware)</h5>
+            </br>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Full Name</label>
+                <input type="text" name="name" class="form-control" placeholder="Enter Full Name" />
+              </div>
 
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Password</label>
-            <input
-              type="password"
-              name="password"
-              class="form-control"
-              placeholder="Minimum 6 Characters"
-            />
-          </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" placeholder="Enter Email" />
+              </div>
 
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Mobile</label>
-            <input
-              type="text"
-              name="mobile"
-              class="form-control"
-              placeholder="Enter 10 Digit Mobile Number"
-              maxlength="10"
-              pattern="[0-9]{10}"
-               
-            />
-          </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Minimum 6 Characters" />
+              </div>
 
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Age</label>
-            <input
-              type="number"
-              name="age"
-              class="form-control"
-              placeholder="Enter Age"
-            />
-          </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Mobile</label>
+                <input type="text" name="mobile" class="form-control" placeholder="Enter 10 Digit Mobile Number"
+                  maxlength="10" pattern="[0-9]{10}" />
+              </div>
 
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Gender</label>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Age</label>
+                <input type="number" name="age" class="form-control" placeholder="Enter Age" />
+              </div>
 
-            <select class="form-select" name="gender">
-              <option value="">Select Gender</option>
-              <option>Male</option>
-              <option>Female</option>
-              <option>Other</option>
-            </select>
-          </div>
-        </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Gender</label>
 
-        <button class="btn btn-success">✅ Validate & Submit</button>
-      </form>
+                <select class="form-select" name="gender">
+                  <option value="">Select Gender</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <button class="btn btn-success">✅ Validate & Submit</button>
+          </form>
     </div>
   </div>
 </div>
@@ -803,28 +749,18 @@
     </div>
 
     <div class="card-body">
-<hr>
-<h4>Multer package but use as a express-middleware with file Uploaded</h4>
+      <hr>
+      <h4>Multer package but use as a express-middleware with file Uploaded</h4>
 
-<br>
-      <form
-        action="/formUpload"
-        method="POST"
-        enctype="multipart/form-data"
-      >
+      </br>
+      <form action="/formUpload" method="POST" enctype="multipart/form-data">
 
         <div class="mb-3">
           <label class="form-label fw-bold">
             Select Image
           </label>
 
-          <input
-            type="file"
-            name="image"
-            class="form-control"
-            accept=".jpg,.jpeg,.png,.webp"
-            required
-          />
+          <input type="file" name="image" class="form-control" accept=".jpg,.jpeg,.png,.webp" required />
         </div>
 
         <button type="submit" class="btn btn-success">
@@ -833,107 +769,79 @@
 
       </form>
 
-          <% if (typeof image !== 'undefined' && image) { %>
-    
-    <hr>
-    
-    <div class="text-center">
-      <h4 class="mb-3">✅ Uploaded Image</h4>
-    
-      <img
-        src="<%= image %>"
-        alt="Uploaded Image"
-        class="img-fluid rounded shadow"
-        width="300"
-      >
-    </div>
-    
-    <% } %>
-    
+      <% if (typeof image !=='undefined' && image) { %>
+
+        <hr>
+
+        <div class="text-center">
+          <h4 class="mb-3">✅ Uploaded Image</h4>
+
+          <img src="<%= image %>" alt="Uploaded Image" class="img-fluid rounded shadow" width="300">
         </div>
+
+        <% } %>
+
+    </div>
 
 
     <div class="card-body">
       <hr>
       <h4>Multer package with file Uploaded</h4>
-      <br>
+      </br>
 
-       <% if (typeof error !== "undefined" && error) { %>
+      <% if (typeof error !=="undefined" && error) { %>
 
         <div class="alert alert-danger">
           <%= error %>
         </div>
 
-      <% } %>
-  <form
-        action="/formUploadM"
-        method="POST"
-        enctype="multipart/form-data"
-      >
+        <% } %>
+          <form action="/formUploadM" method="POST" enctype="multipart/form-data">
 
-        <div class="mb-3">
-          <label class="form-label fw-bold">
-            User Name 
-          </label>
+            <div class="mb-3">
+              <label class="form-label fw-bold">
+                User Name
+              </label>
 
-          <input
-            type="text"
-            name="uploadName"
-            class="form-control"
-            placeholder="Enter Your Name"
-            required
-          />
-        </div>
+              <input type="text" name="uploadName" class="form-control" placeholder="Enter Your Name" required />
+            </div>
 
-       
-<div class="mb-3 mt-3">
-  <label class="form-label fw-bold">
-    Select Document
-  </label>
 
-  <input
-    type="file"
-    name="docs"
-    class="form-control"
-    accept=".pdf,.doc,.docx,.txt,.xlsx,.xls,.ppt,.pptx"
-    required
-  />
-</div>
+            <div class="mb-3 mt-3">
+              <label class="form-label fw-bold">
+                Select Document
+              </label>
 
-<button type="submit" class="btn btn-success">
-  📄 Upload Document
-</button>
+              <input type="file" name="docs" class="form-control" accept=".pdf,.doc,.docx,.txt,.xlsx,.xls,.ppt,.pptx"
+                required />
+            </div>
 
-</form>
-<% if (typeof docs !== "undefined" && docs) { %>
+            <button type="submit" class="btn btn-success">
+              📄 Upload Document
+            </button>
 
-<hr>
+          </form>
+          <% if (typeof docs !=="undefined" && docs) { %>
 
-<div class="text-center">
+            <hr>
 
-  <h4 class="mb-3">
-    ✅ Uploaded Document
-  </h4>
+            <div class="text-center">
 
-  <a
-    href="<%= docs %>"
-    target="_blank"
-    class="btn btn-primary me-2"
-  >
-    📄 Open Document
-  </a>
+              <h4 class="mb-3">
+                ✅ Uploaded Document
+              </h4>
 
-  <a
-    href="<%= docs %>"
-    download
-    class="btn btn-success"
-  >
-    ⬇ Download
-  </a>
+              <a href="<%= docs %>" target="_blank" class="btn btn-primary me-2">
+                📄 Open Document
+              </a>
 
-</div>
+              <a href="<%= docs %>" download class="btn btn-success">
+                ⬇ Download
+              </a>
 
-<% } %>
-</div>
-</div>
+            </div>
+
+            <% } %>
+    </div>
+  </div>
 </div>
