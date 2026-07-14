@@ -1,0 +1,154 @@
+<div class="alert alert-warning text-center">
+
+    ⏳ Session expires in
+
+    <strong>
+
+        <span id="countdown">
+
+            60
+
+        </span>
+
+    </strong>
+
+    seconds
+
+</div>
+
+<script src="/js/session.js"></script>
+
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-10">
+
+            <!-- Welcome Card -->
+
+            <div class="card shadow-lg border-0 rounded-4 mb-4">
+
+                <div class="card-header bg-success text-white">
+
+                    <h2 class="mb-0">
+                        🎉 Dashboard
+                    </h2>
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>
+                        Welcome,
+                        <span class="text-primary">
+                            <%= user.username %>
+                        </span>
+                    </h3>
+
+                    <p class="text-muted">
+
+                        You are successfully logged in using
+                        <strong>Express Session.</strong>
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- User Information -->
+
+            <div class="card shadow-sm border-0 rounded-4 mb-4">
+
+                <div class="card-header bg-dark text-white">
+
+                    <h4 class="mb-0">
+                        👤 User Information
+                    </h4>
+
+                </div>
+
+                <div class="card-body">
+
+                    <table class="table table-bordered">
+
+                        <tr>
+                            <th width="30%">User ID</th>
+                            <td>
+                                <%= user.id %>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Username</th>
+                            <td>
+                                <%= user.username %>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Email</th>
+                            <td>
+                                <%= user.email %>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Role</th>
+                            <td>
+                                <span class="badge bg-success">
+                                    <%= user.role %>
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Login Time</th>
+                            <td>
+                                <%= loginTime.toLocaleString() %>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Session ID</th>
+                            <td>
+
+                                <small>
+
+                                    <%= sessionID %>
+
+                                </small>
+
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+            <!-- Navigation Buttons -->
+
+            <div class="text-center">
+
+                <a href="/profile" class="btn btn-primary me-2">
+                    👤 Profile
+                </a>
+
+                <a href="/session-info" class="btn btn-warning me-2">
+                    📄 Session Info
+                </a>
+
+                <a href="/logout" class="btn btn-danger">
+                    🚪 Logout
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

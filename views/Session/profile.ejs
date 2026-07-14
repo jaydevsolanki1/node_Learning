@@ -1,0 +1,166 @@
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="card shadow-lg border-0 rounded-4">
+
+                <div class="card-header bg-primary text-white text-center">
+
+                    <h2>👤 User Profile</h2>
+
+                </div>
+
+                <div class="card-body text-center">
+
+                    <img src="https://ui-avatars.com/api/?name=<%= user.username %>&background=0D6EFD&color=fff&size=150"
+                        class="rounded-circle shadow mb-4">
+
+                    <h3>
+
+                        <%= user.username %>
+
+                    </h3>
+
+                    <span class="badge bg-success fs-6">
+
+                        <%= user.role %>
+
+                    </span>
+
+                    <hr>
+
+                    <table class="table table-bordered">
+
+                        <tr>
+
+                            <th width="35%">
+                                User ID
+                            </th>
+
+                            <td>
+
+                                <%= user.id %>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+
+                                Username
+
+                            </th>
+
+                            <td>
+
+                                <%= user.username %>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+
+                                Email
+
+                            </th>
+
+                            <td>
+
+                                <%= user.email %>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+
+                                Role
+
+                            </th>
+
+                            <td>
+
+                                <%= user.role %>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+
+                                Login Time
+
+                            </th>
+
+                            <td>
+
+                                <%= loginTime.toLocaleString() %>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+
+                                Session Status
+
+                            </th>
+
+                            <td>
+
+                                <span class="badge bg-success">
+
+                                    Logged In
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                </div>
+
+                <div class="card-footer text-center">
+
+                    <a href="/dashboard" class="btn btn-success me-2">
+
+                        🏠 Dashboard
+
+                    </a>
+
+                    <a href="/session-info" class="btn btn-warning me-2">
+
+                        📄 Session Info
+
+                    </a>
+
+                    <a href="/logout" class="btn btn-danger">
+
+                        🚪 Logout
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

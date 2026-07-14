@@ -1,0 +1,183 @@
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-10">
+
+            <!-- Header -->
+
+            <div class="card shadow-lg border-0 rounded-4 mb-4">
+
+                <div class="card-header bg-dark text-white">
+
+                    <h2 class="mb-0">
+                        📄 Express Session Information
+                    </h2>
+
+                </div>
+
+                <div class="card-body">
+
+                    <p class="text-muted">
+
+                        This page displays everything stored inside
+                        <strong>req.session</strong>.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Session Details -->
+
+            <div class="card shadow-sm rounded-4 mb-4">
+
+                <div class="card-header bg-primary text-white">
+
+                    <h4 class="mb-0">
+                        🔐 Session Details
+                    </h4>
+
+                </div>
+
+                <div class="card-body">
+
+                    <table class="table table-bordered">
+
+                        <tr>
+                            <th width="35%">Session ID</th>
+                            <td>
+                                <%= sessionID %>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Username</th>
+                            <td>
+                                <%= session.user.username %>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Email</th>
+                            <td>
+                                <%= session.user.email %>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Role</th>
+                            <td>
+                                <%= session.user.role %>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Login Status</th>
+                            <td>
+
+                                <% if(session.isLogin){ %>
+
+                                    <span class="badge bg-success">
+                                        Logged In
+                                    </span>
+
+                                    <% }else{ %>
+
+                                        <span class="badge bg-danger">
+                                            Logged Out
+                                        </span>
+
+                                        <% } %>
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Login Time</th>
+                            <td>
+
+                                <%= loginTime.toLocaleString() %>
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Cookie Max Age</th>
+                            <td>
+
+                                <%= session.cookie.maxAge %> ms
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Cookie Path</th>
+                            <td>
+
+                                <%= session.cookie.path %>
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>HTTP Only</th>
+                            <td>
+
+                                <%= session.cookie.httpOnly %>
+
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+            <!-- Complete Session -->
+
+            <div class="card shadow-sm rounded-4 mb-4">
+
+                <div class="card-header bg-success text-white">
+
+                    <h4 class="mb-0">
+
+                        📦 Complete Session Object
+
+                    </h4>
+
+                </div>
+
+                <div class="card-body">
+
+                    <pre><%= JSON.stringify(session,null,4) %></pre>
+
+                </div>
+
+            </div>
+
+            <!-- Buttons -->
+
+            <div class="text-center">
+
+                <a href="/dashboard" class="btn btn-success me-2">
+                    🏠 Dashboard
+                </a>
+
+                <a href="/profile" class="btn btn-primary me-2">
+                    👤 Profile
+                </a>
+
+                <a href="/logout" class="btn btn-danger">
+                    🚪 Logout
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
