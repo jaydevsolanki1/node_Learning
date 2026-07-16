@@ -38,6 +38,10 @@ import sessionRouter from "./routes/session.route.js";
 import applicationMiddleware from "./middleware/3.application-middleware.js";
 import errorMiddleware from "./middleware/4.error.middleware.js";
 
+// Encrypt & Compare User Passwords, Password Hashing TOPIC : Authentications
+import bcrypt from "bcrypt";
+import AuthBcryptRouter from "./routes/AuthBcrypt.route.js";
+
 /* ==========================================================================
    CREATE EXPRESS APP
 ========================================================================== */
@@ -198,6 +202,9 @@ app.use(applicationMiddleware);
 /* ==========================================================================
    ROUTES
 ========================================================================== */
+
+// Auth_Bcrypt Routes
+app.use("/", AuthBcryptRouter);
 
 // Sessions Routes
 app.use("/", sessionRouter);

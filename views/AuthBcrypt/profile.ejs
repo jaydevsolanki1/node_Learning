@@ -1,0 +1,203 @@
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+
+                <!-- Header -->
+
+                <div class="bg-primary text-white text-center py-5">
+
+                    <i class="fa-solid fa-circle-user fa-7x mb-3"></i>
+
+                    <h2 class="fw-bold">
+
+                        <%= user.name %>
+
+                    </h2>
+
+                    <p class="mb-0">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <%= user.email %>
+
+                    </p>
+
+                </div>
+
+                <!-- Body -->
+
+                <div class="card-body p-5">
+
+                    <h4 class="mb-4">
+
+                        <i class="fa-solid fa-address-card text-primary"></i>
+
+                        Profile Information
+
+                    </h4>
+
+                    <table class="table table-bordered table-hover align-middle">
+
+                        <tbody>
+
+                            <tr>
+
+                                <th width="30%">
+
+                                    <i class="fa-solid fa-user text-primary"></i>
+
+                                    Full Name
+
+                                </th>
+
+                                <td>
+
+                                    <%= user.name %>
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>
+
+                                    <i class="fa-solid fa-envelope text-success"></i>
+
+                                    Email
+
+                                </th>
+
+                                <td>
+
+                                    <%= user.email %>
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>
+
+                                    <i class="fa-solid fa-id-card text-warning"></i>
+
+                                    User ID
+
+                                </th>
+
+                                <td>
+
+                                    <%= user.id %>
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>
+
+                                    <i class="fa-solid fa-shield-halved text-danger"></i>
+
+                                    Account Status
+
+                                </th>
+
+                                <td>
+
+                                    <span class="badge bg-success">
+
+                                        Active
+
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>
+
+                                    <i class="fa-solid fa-calendar-days text-info"></i>
+
+                                    Joined
+
+                                </th>
+
+                                <td>
+
+                                    <% if(user.createdAt){ %>
+
+                                        <%= new Date(user.createdAt).toDateString() %>
+
+                                            <% }else{ %>
+
+                                                Not Available
+
+                                                <% } %>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                    <!-- Buttons -->
+
+                    <div class="row mt-5 g-3">
+
+                        <div class="col-md-4">
+
+                            <a href="/AuthDashboard" class="btn btn-primary w-100 btn-lg">
+
+                                <i class="fa-solid fa-house"></i>
+
+                                Dashboard
+
+                            </a>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <a href="/AuthEdit-profile" class="btn btn-warning w-100 btn-lg">
+
+                                <i class="fa-solid fa-pen-to-square"></i>
+
+                                Edit Profile
+
+                            </a>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <a href="/AuthLogout" class="btn btn-danger w-100 btn-lg">
+
+                                <i class="fa-solid fa-right-from-bracket"></i>
+
+                                Logout
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
