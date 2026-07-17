@@ -2,6 +2,14 @@
    IMPORTS
 ========================================================================== */
 
+//Dot env
+import "dotenv/config";
+
+console.log("========== ENV TEST ==========");
+console.log(process.env.EMAIL_USER);
+console.log(process.env.EMAIL_PASS);
+console.log("========== END ==========");
+
 // Express
 import express from "express";
 

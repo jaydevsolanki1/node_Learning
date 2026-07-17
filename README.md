@@ -101,24 +101,86 @@ A complete backend learning project built using **Node.js, Express.js, MongoDB, 
 
 ---
 
+## ✅ Authentication using bcrypt
+
+### User Authentication
+
+- User Registration
+- User Login
+- User Logout
+- Secure Authentication Flow
+- Protected Routes
+- Authentication Middleware
+- Dashboard
+- Profile Page
+- Edit Profile
+- Dynamic Authentication Navbar
+
+### Password Security
+
+- bcrypt Package
+- Password Hashing
+- Password Comparison
+- Salt Rounds
+- Secure Password Storage
+- Login Authentication
+- Hashing Before Saving User
+- Comparing Hashed Password During Login
+
+---
+
 ## ✅ Express Session Authentication
 
 - express-session Setup
 - Session Middleware
-- Login & Logout
-- Protected Routes
-- Authentication Middleware
+- Session Authentication
 - Session Information
-- Dashboard
-- Profile Page
 - req.session
 - req.sessionID
 - Session Cookie (connect.sid)
+- Session Storage
 - Session Destroy
-- Session Timeout
+- Login & Logout
 - Auto Logout
-- Dynamic Navbar
+- Session Timeout
+- Protected Routes
+- Authentication Middleware
+- Dashboard
+- Profile Page
 - MVC Implementation
+
+---
+
+## ✅ Forgot Password using Crypto
+
+### Crypto Module
+
+- Node.js Crypto Module
+- crypto.randomBytes()
+- Secure Token Generation
+- Hex Token Conversion
+
+### Forgot Password
+
+- Forgot Password Page
+- Reset Password Page
+- Generate Reset Token
+- Store Reset Token in MongoDB
+- Token Expiration
+- Verify Reset Token
+- Reset Password Flow
+- Update Password
+- Remove Reset Token
+- Password Re-Hashing using bcrypt
+
+### Email Service
+
+- Nodemailer
+- Gmail SMTP
+- Send Reset Password Email
+- HTML Email Template
+- Reset Password Link
+- Environment Variables (.env)
 
 ---
 
@@ -134,8 +196,19 @@ A complete backend learning project built using **Node.js, Express.js, MongoDB, 
 - File Upload System
 - Pagination
 - Error Handling
+- User Registration
+- User Login
+- User Logout
+- bcrypt Password Hashing
 - Session Authentication
 - Protected Routes
+- Dashboard
+- User Profile
+- Edit Profile
+- Forgot Password
+- Reset Password
+- Crypto Secure Token Generation
+- Nodemailer Email Service
 
 ---
 
@@ -147,10 +220,13 @@ A complete backend learning project built using **Node.js, Express.js, MongoDB, 
 - Mongoose
 - EJS
 - Bootstrap 5
+- bcrypt
+- Crypto (Node.js)
+- Express Session
+- Nodemailer
 - Multer
 - Validator
 - Express Validator
-- Express Session
 - Morgan
 - Helmet
 - CORS
@@ -166,7 +242,17 @@ During this project, I practiced:
 - MVC Architecture
 - REST Principles
 - MongoDB Database Design
-- Authentication using Sessions
+- CRUD Operations
+- Authentication using bcrypt
+- Session-Based Authentication
+- Password Hashing
+- Password Comparison
+- Protected Routes
+- User Profile Management
+- Forgot Password System
+- Secure Token Generation using Crypto
+- Password Reset Flow
+- Email Integration using Nodemailer
 - File Handling
 - Validation Techniques
 - Middleware Flow
@@ -194,7 +280,21 @@ During this project, I practiced:
 
 ✅ Error Handling Completed
 
+✅ Authentication using bcrypt Completed
+
 ✅ Express Session Authentication Completed
+
+✅ Dashboard Completed
+
+✅ Profile Management Completed
+
+✅ Edit Profile Completed
+
+✅ Forgot Password using Crypto Completed
+
+✅ Reset Password Completed
+
+✅ Nodemailer Email Integration Completed
 
 ---
 
@@ -202,4 +302,4 @@ During this project, I practiced:
 
 **Jaydev Solanki**
 
-Backend Learning Journey using **Node.js**, **Express.js**, **MongoDB**, and **EJS**.
+Backend Learning Journey using **Node.js**, **Express.js**, **MongoDB**, **Mongoose**, and **EJS** following the **MVC Architecture** while building real-world backend applications.
