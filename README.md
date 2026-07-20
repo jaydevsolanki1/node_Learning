@@ -184,6 +184,50 @@ A complete backend learning project built using **Node.js, Express.js, MongoDB, 
 
 ---
 
+## ✅ Cookies using cookie-parser
+
+### Cookie Basics
+
+- What are Cookies?
+- Browser Cookie Storage
+- HTTP Cookies
+- Cookie Lifecycle
+- Cookie Parser Middleware
+
+### Cookie Operations
+
+- Set Cookies
+- Get Cookies
+- Update Cookies
+- Delete Cookies
+- Clear All Cookies
+
+### Advanced Cookies
+
+- Cookie Options
+- maxAge
+- expires
+- httpOnly
+- secure
+- sameSite
+- path
+- domain
+- Multiple Cookies
+- Signed Cookies
+- Update Signed Cookies
+- Get Signed Cookies
+
+### Cookie Concepts
+
+- req.cookies
+- req.signedCookies
+- res.cookie()
+- res.clearCookie()
+- Cookies vs Sessions
+- MVC Implementation
+
+---
+
 # 📂 Project Features
 
 - Contact Management System
@@ -209,6 +253,14 @@ A complete backend learning project built using **Node.js, Express.js, MongoDB, 
 - Reset Password
 - Crypto Secure Token Generation
 - Nodemailer Email Service
+- Cookie Parser Integration
+- Browser Cookie Management
+- Cookie CRUD Operations
+- Cookie Options
+- Signed Cookies
+- Multiple Cookies
+- Cookie Security
+- Cookies vs Sessions
 
 ---
 
@@ -231,6 +283,7 @@ A complete backend learning project built using **Node.js, Express.js, MongoDB, 
 - Helmet
 - CORS
 - mongoose-paginate-v2
+- cookie-parser
 
 ---
 
@@ -259,6 +312,13 @@ During this project, I practiced:
 - Error Handling
 - Pagination
 - Clean Project Structure
+- Browser Cookie Management
+- Cookie CRUD Operations
+- Cookie Options & Security
+- Signed Cookies
+- Multiple Cookies
+- Cookies vs Sessions
+- Cookie Parser Middleware
 
 ---
 
@@ -296,7 +356,17 @@ During this project, I practiced:
 
 ✅ Nodemailer Email Integration Completed
 
----
+✅ Cookies using cookie-parser Completed
+
+✅ Cookie CRUD Operations Completed
+
+✅ Cookie Options Completed
+
+✅ Signed Cookies Completed
+
+✅ Multiple Cookies Completed
+
+## ✅ Cookies vs Sessions Completed
 
 # 👨‍💻 Author
 

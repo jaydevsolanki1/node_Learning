@@ -50,6 +50,11 @@ import errorMiddleware from "./middleware/4.error.middleware.js";
 import bcrypt from "bcrypt";
 import AuthBcryptRouter from "./routes/AuthBcrypt.route.js";
 
+// Cookies
+import cookieParser from "cookie-parser";
+import cookiesRouter from "./routes/cookies.route.js";
+import cookiesMiddleware from "./middleware/11.Cookies.middleware.js";
+
 /* ==========================================================================
    CREATE EXPRESS APP
 ========================================================================== */
@@ -210,6 +215,15 @@ app.use(applicationMiddleware);
 /* ==========================================================================
    ROUTES
 ========================================================================== */
+
+// Cookies Routes
+
+// without use env file -------------->
+app.use(cookieParser("mySuperSecretKey"));
+// with use env file -------------->
+// app.use(cookieParser(process.env.COOKIE_SECRET));
+
+app.use("/", cookiesMiddleware, cookiesRouter);
 
 // Auth_Bcrypt Routes
 app.use("/", AuthBcryptRouter);
