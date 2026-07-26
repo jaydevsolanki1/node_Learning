@@ -1,79 +1,380 @@
-<!-- Include Header -->
-<div class="container mt-5">
-  <!-- Page Header -->
-  <div class="text-center mb-5">
-    <h1>About Us</h1>
-    <p class="lead text-muted">
-      Learn more about our mission, vision, and team
-    </p>
-  </div>
+<div class="container py-5">
 
-  <!-- Mission Section -->
+  <!-- ================= HERO SECTION ================= -->
   <div class="row align-items-center mb-5">
-    <div class="col-md-6">
-      <img
-        src="https://wallpapers.com/images/hd/one-piece-title-logo-x6sm3qr1gxyqmrzg.jpg"
-        class="img-fluid rounded shadow"
-        alt="Our Mission"
-      />
+
+    <div class="col-lg-5 text-center mb-4 mb-lg-0">
+      <img src="/images/profile.jpg" class="img-fluid rounded-circle shadow"
+        style="width:280px;height:280px;object-fit:cover;" alt="Jaydev Solanki">
     </div>
-    <div class="col-md-6">
-      <h2>Our Mission</h2>
-      <p>
-        The "One Piece" is the legendary treasure left by the Pirate King, Gol
-        D. Roger, at the end of the Grand Line on the island of Laugh Tale
+
+    <div class="col-lg-7">
+
+      <h1 class="display-4 fw-bold">
+        Hi, I'm Jaydev Solanki 👋
+      </h1>
+
+      <h4 class="text-primary mb-3">
+        MERN Stack Developer
+      </h4>
+
+      <p class="lead">
+
+        Passionate MERN Stack Developer currently pursuing MCA and continuously
+        building real-world applications using React.js, Node.js, Express.js
+        and MongoDB.
+
       </p>
+
+      <p>
+
+        I enjoy creating modern responsive websites, REST APIs,
+        authentication systems, backend architectures, and clean UI designs.
+        My goal is to become a professional Full Stack Developer.
+
+      </p>
+
+      <a href="/contact" class="btn btn-primary btn-lg me-3">
+        Contact Me
+      </a>
+
+      <a href="/project" class="btn btn-outline-dark btn-lg">
+        View Projects
+      </a>
+
     </div>
+
   </div>
 
-  <!-- Vision Section -->
-  <div class="row align-items-center mb-5 flex-md-row-reverse">
-    <div class="col-md-6">
-      <img
-        src="https://wallpapers.com/images/hd/one-piece-logo-crew-set-cd1kiqgql9qyjzp8.jpg"
-        class="img-fluid rounded shadow"
-        alt="Our Vision"
-      />
+
+
+  <!-- ================= ABOUT ================= -->
+
+  <div class="row mb-5">
+
+    <div class="col-lg-12">
+
+      <div class="card shadow border-0">
+
+        <div class="card-body p-5">
+
+          <h2 class="mb-4">
+            About Me
+          </h2>
+
+          <p>
+
+            I am an aspiring Full Stack MERN Developer from Rajkot, Gujarat.
+
+            I have completed my Bachelor of Computer Applications and currently
+            pursuing Master of Computer Applications.
+
+          </p>
+
+          <p>
+
+            I love building scalable backend systems using Node.js,
+            Express.js and MongoDB while also creating beautiful
+            frontend applications using React.js.
+
+          </p>
+
+        </div>
+
+      </div>
+
     </div>
-    <div class="col-md-6">
-      <h2>Our Vision</h2>
-      <p>
-        The main One Piece crew, the Straw Hat Pirates, includes Captain Monkey D. Luffy, along with Roronoa Zoro, Nami, Usopp, Sanji, Tony Tony Chopper, Nico Robin, Franky, Brook, and Jinbe. A former member is Nefertari Vivi
-      </p>
-    </div>
+
   </div>
 
-  <!-- Team Section -->
-  <div class="text-center mb-4">
-    <h2>Meet Our Team</h2>
-    <p class="text-muted">The people who make it all happen</p>
-  </div>
-  <div class="row">
-    <% if (team && team.length) { %> <% team.forEach(member => { %>
-    <div class="col-md-4 mb-4">
-      <div class="card h-100 text-center shadow-sm">
-        <img
-          src="https://cdn.wallpapersafari.com/20/66/ZQH8UV.jpg"
-          class="card-img-top"
-          alt="<%= member.name %>"
-        />
-        <div class="card-body">
-          <h5 class="card-title"><%= member.name %></h5>
-          <p class="card-text text-muted"><%= member.role %></p>
-          <p class="card-text"><%= member.bio %></p>
+
+
+  <!-- ================= SKILLS ================= -->
+
+  <div class="mb-5">
+
+    <h2 class="text-center mb-4">
+      Technical Skills
+    </h2>
+
+    <div class="row g-3">
+
+      <div class="col-md-3">
+        <div class="card text-center shadow-sm">
+          <div class="card-body">
+            <h5>Frontend</h5>
+            <p>HTML</p>
+            <p>CSS</p>
+            <p>JavaScript</p>
+            <p>React</p>
+            <p>Bootstrap</p>
+            <p>Tailwind</p>
+          </div>
         </div>
       </div>
+
+      <div class="col-md-3">
+        <div class="card text-center shadow-sm">
+          <div class="card-body">
+            <h5>Backend</h5>
+            <p>Node.js</p>
+            <p>Express.js</p>
+            <p>REST API</p>
+            <p>JWT</p>
+            <p>Express Session</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card text-center shadow-sm">
+          <div class="card-body">
+            <h5>Database</h5>
+            <p>MongoDB</p>
+            <p>Mongoose</p>
+            <p>MySQL</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card text-center shadow-sm">
+          <div class="card-body">
+            <h5>Tools</h5>
+            <p>Git</p>
+            <p>GitHub</p>
+            <p>VS Code</p>
+            <p>Firebase</p>
+            <p>Vercel</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <% }) %> <% } else { %>
-    <p class="text-center text-muted">Team information coming soon!</p>
-    <% } %>
+
   </div>
 
-  <!-- Call to Action -->
+
+
+  <!-- ================= EDUCATION ================= -->
+
+  <div class="row mb-5">
+
+    <div class="col-md-6">
+
+      <div class="card shadow-sm h-100">
+
+        <div class="card-body">
+
+          <h3>MCA</h3>
+
+          <p>B.H. Gardi College</p>
+
+          <p>GTU Rajkot</p>
+
+          <p>2025 - Present</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+      <div class="card shadow-sm h-100">
+
+        <div class="card-body">
+
+          <h3>BCA</h3>
+
+          <p>T.N. Rao College</p>
+
+          <p>Rajkot</p>
+
+          <p>2022 - 2025</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ================= INTERNSHIP ================= -->
+
+  <div class="card shadow border-0 mb-5">
+
+    <div class="card-body p-5">
+
+      <h2>
+
+        Internship Experience
+
+      </h2>
+
+      <hr>
+
+      <h4>
+
+        MERN Stack Developer Intern
+
+      </h4>
+
+      <h5>
+
+        Brands.live — Ahmedabad
+
+      </h5>
+
+      <p>
+
+        Worked on React.js projects, reusable UI components,
+        CRUD operations, REST API integration,
+        debugging, testing and GitHub collaboration.
+
+      </p>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ================= PROJECTS ================= -->
+
+  <h2 class="text-center mb-4">
+
+    Featured Projects
+
+  </h2>
+
+  <div class="row">
+
+    <div class="col-md-4">
+
+      <div class="card shadow-sm h-100">
+
+        <div class="card-body">
+
+          <h4>MERN CRUD API</h4>
+
+          <p>
+
+            Complete CRUD API using Node.js,
+            Express.js and MongoDB.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+      <div class="card shadow-sm h-100">
+
+        <div class="card-body">
+
+          <h4>React UI Showcase</h4>
+
+          <p>
+
+            Collection of reusable React components,
+            hooks and responsive layouts.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+      <div class="card shadow-sm h-100">
+
+        <div class="card-body">
+
+          <h4>Node.js Playground</h4>
+
+          <p>
+
+            Learning repository covering MVC,
+            Authentication,
+            Sessions,
+            Middleware,
+            File Upload,
+            Validation and REST APIs.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ================= GOAL ================= -->
+
+  <div class="card bg-dark text-white mt-5">
+
+    <div class="card-body text-center p-5">
+
+      <h2>
+
+        My Goal 🚀
+
+      </h2>
+
+      <p class="lead">
+
+        To become a professional Full Stack MERN Developer,
+        contribute to real-world products,
+        continuously learn modern technologies,
+        and build scalable applications that solve real problems.
+
+      </p>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ================= CONTACT ================= -->
+
   <div class="text-center mt-5">
-    <h3>Want to collaborate with us?</h3>
-    <a href="/contact" class="btn btn-primary btn-lg mt-3">Contact Us</a>
-  </div>
-</div>
 
-<!-- Include Footer -->
+    <h2>
+
+      Let's Build Something Amazing
+
+    </h2>
+
+    <p>
+
+      Interested in working together?
+      Feel free to contact me.
+
+    </p>
+
+    <a href="/contact" class="btn btn-primary btn-lg">
+
+      Contact Me
+
+    </a>
+
+  </div>
+
+</div>

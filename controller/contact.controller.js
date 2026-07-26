@@ -303,28 +303,30 @@ const submitContact = (req, res) => {
 const serachServices = (req, res) => {
   const services = [
     {
-      name: "Web Development",
-      description: "Responsive and modern websites",
+      name: "Frontend Development",
+      description:
+        "Responsive websites using HTML, CSS, JavaScript, Bootstrap and React.",
     },
     {
-      name: "Mobile Apps",
-      description: "iOS and Android applications",
+      name: "Backend Development",
+      description: "REST APIs with Node.js, Express.js and MongoDB.",
     },
     {
-      name: "SEO Optimization",
-      description: "Boost your search rankings",
+      name: "Full Stack MERN",
+      description:
+        "Complete MERN Stack applications with authentication and database integration.",
+    },
+    {
+      name: "Portfolio Website",
+      description: "Modern personal portfolios for students and professionals.",
     },
     {
       name: "UI/UX Design",
-      description: "Beautiful and user-friendly designs",
+      description: "Clean, responsive and user-friendly interfaces.",
     },
     {
-      name: "Video Editing",
-      description: "Capture motion professionally",
-    },
-    {
-      name: "Graphic Design",
-      description: "Creative visual designs",
+      name: "Bug Fixing",
+      description: "Debugging, optimization and performance improvements.",
     },
   ];
 

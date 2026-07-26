@@ -1,22 +1,212 @@
+<!-- ================= SERVICES PAGE ================= -->
 
-  <!-- Header -->
+<div class="container py-5">
 
-  <!-- Services Section -->
-  <div class="container mt-5">
-    <h1 class="text-center mb-4">Our Services</h1>
-    <div class="row">
-      <% services.forEach(service => { %>
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body text-center">
-              <h5 class="card-title"><%= service.name %></h5>
-              <p class="card-text"><%= service.description %></p>
-            </div>
-          </div>
-        </div>
-      <% }) %>
-    </div>
+  <!-- ================= PAGE HEADER ================= -->
+
+  <div class="text-center mb-5">
+
+    <h1 class="display-4 fw-bold">
+      My Services
+    </h1>
+
+    <p class="lead text-muted">
+      I build modern, responsive, and scalable web applications using the MERN Stack.
+      Here are the services I offer.
+    </p>
+
   </div>
 
-  <!-- Footer -->   
+  <!-- ================= SERVICES ================= -->
 
+  <div class="row g-4">
+
+    <% services.forEach(service=> { %>
+
+      <div class="col-md-6 col-lg-4">
+
+        <div class="card border-0 shadow-lg h-100 text-center">
+
+          <div class="card-body p-4">
+
+            <div class="display-4 mb-3">
+              🚀
+            </div>
+
+            <h4 class="fw-bold">
+
+              <%= service.name %>
+
+            </h4>
+
+            <p class="text-muted mt-3">
+
+              <%= service.description %>
+
+            </p>
+
+            <hr>
+
+            <ul class="list-unstyled text-start">
+
+              <li>✔ Responsive Design</li>
+
+              <li>✔ Clean Code</li>
+
+              <li>✔ High Performance</li>
+
+              <li>✔ Mobile Friendly</li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <% }) %>
+
+  </div>
+
+  <!-- ================= WHY CHOOSE ME ================= -->
+
+  <div class="mt-5">
+
+    <div class="text-center mb-4">
+
+      <h2>Why Choose Me?</h2>
+
+      <p class="text-muted">
+        I focus on building high-quality web applications with modern technologies.
+      </p>
+
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+
+        <div class="card border-0 shadow-sm text-center h-100">
+
+          <div class="card-body">
+
+            <h1>⚡</h1>
+
+            <h4>Fast Development</h4>
+
+            <p class="text-muted">
+
+              Clean, optimized and scalable applications built using modern development practices.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-4">
+
+        <div class="card border-0 shadow-sm text-center h-100">
+
+          <div class="card-body">
+
+            <h1>💻</h1>
+
+            <h4>MERN Stack</h4>
+
+            <p class="text-muted">
+
+              React, Node.js, Express.js and MongoDB for full-stack web development.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-4">
+
+        <div class="card border-0 shadow-sm text-center h-100">
+
+          <div class="card-body">
+
+            <h1>🛠️</h1>
+
+            <h4>Support</h4>
+
+            <p class="text-muted">
+
+              Continuous improvements, maintenance and support after project completion.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ================= TECHNOLOGIES ================= -->
+
+  <div class="mt-5 text-center">
+
+    <h2 class="mb-4">
+      Technologies I Work With
+    </h2>
+
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+
+      <span class="badge bg-primary p-3">HTML5</span>
+
+      <span class="badge bg-success p-3">CSS3</span>
+
+      <span class="badge bg-warning text-dark p-3">JavaScript</span>
+
+      <span class="badge bg-info text-dark p-3">React</span>
+
+      <span class="badge bg-dark p-3">Node.js</span>
+
+      <span class="badge bg-success p-3">Express.js</span>
+
+      <span class="badge bg-secondary p-3">MongoDB</span>
+
+      <span class="badge bg-danger p-3">Bootstrap</span>
+
+      <span class="badge bg-primary p-3">Git & GitHub</span>
+
+    </div>
+
+  </div>
+
+  <!-- ================= CALL TO ACTION ================= -->
+
+  <div class="text-center mt-5">
+
+    <h2>
+      Ready to Start Your Project?
+    </h2>
+
+    <p class="text-muted">
+
+      Let's build something amazing together.
+
+    </p>
+
+    <a href="/contact" class="btn btn-primary btn-lg mt-3">
+
+      Hire Me 🚀
+
+    </a>
+
+  </div>
+
+</div>

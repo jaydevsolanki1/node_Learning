@@ -1,171 +1,159 @@
-<div class="container py-5">
+<div class="container-fluid py-5 p-5">
 
   <div class="card shadow-sm border-0">
 
- 
-<!-- Header -->
-<div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-  <h4 class="mb-0">
-    <i class="bi bi-people-fill"></i>
-    All Contacts
-  </h4>
 
-  <a href="/add_contact" class="btn btn-success">
-    <i class="bi bi-plus-circle"></i>
-    Add Contact
-  </a>
-</div>
+    <!-- Header -->
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+      <h4 class="mb-0">
+        <i class="bi bi-people-fill"></i>
+        All Contacts
+      </h4>
 
-<!-- Body -->
-<div class="card-body">
+      <a href="/add_contact" class="btn btn-success">
+        <i class="bi bi-plus-circle"></i>
+        Add Contact
+      </a>
+    </div>
 
-  <% if (contacts && contacts.length > 0) { %>
+    <!-- Body -->
+    <div class="card-body">
 
-  <div class="table-responsive">
+      <% if (contacts && contacts.length> 0) { %>
 
-    <table class="table table-hover table-bordered align-middle">
+        <div class="table-responsive">
 
-      <thead class="table-dark">
-        <tr>
-          <th width="5%">#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th width="18%">Actions</th>
-        </tr>
-      </thead>
+          <table class="table table-hover table-bordered align-middle">
 
-      <tbody>
+            <thead class="table-dark">
+              <tr>
+                <th width="5%">#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th width="18%">Actions</th>
+              </tr>
+            </thead>
 
-        <% contacts.forEach((c, i) => { %>
+            <tbody>
 
-        <tr>
-          <td>
-            <%= pagingCounter + i %>
-          </td>
+              <% contacts.forEach((c, i)=> { %>
 
-          <td><%= c.first %></td>
+                <tr>
+                  <td>
+                    <%= pagingCounter + i %>
+                  </td>
 
-          <td><%= c.last %></td>
+                  <td>
+                    <%= c.first %>
+                  </td>
 
-          <td>
-            <%= c.email %>
-          </td>
+                  <td>
+                    <%= c.last %>
+                  </td>
 
-          <td>
-            <%= c.phone %>
-          </td>
+                  <td>
+                    <%= c.email %>
+                  </td>
 
-          <td>
+                  <td>
+                    <%= c.phone %>
+                  </td>
 
-            <a
-              href="/show_contact/<%= c._id %>"
-              class="btn btn-info btn-sm"
-            >
-              <i class="bi bi-eye"></i>
+                  <td>
+
+                    <a href="/show_contact/<%= c._id %>" class="btn btn-info btn-sm">
+                      <i class="bi bi-eye"></i>
+                    </a>
+
+                    <a href="/update_contact/<%= c._id %>" class="btn btn-warning btn-sm">
+                      <i class="bi bi-pencil-square"></i>
+                    </a>
+
+                    <a href="/delete_contact/<%= c._id %>" class="btn btn-danger btn-sm"
+                      onclick="return confirm('Delete this contact?')">
+                      <i class="bi bi-trash"></i>
+                    </a>
+
+                  </td>
+                </tr>
+
+                <% }) %>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+        <% } else { %>
+
+          <div class="alert alert-info text-center">
+            <h5>No Contacts Found</h5>
+            <p class="mb-0">
+              Click "Add Contact" to create your first contact.
+            </p>
+          </div>
+
+          <% } %>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="card-footer d-flex justify-content-between align-items-center">
+
+      <div>
+        Total Contacts :
+        <strong>
+          <%= totalDocs %>
+        </strong>
+      </div>
+
+      <nav>
+
+        <ul class="pagination mb-0">
+
+          <!-- Previous -->
+
+          <li class="page-item <%= !hasPrevPage ? 'disabled' : '' %>">
+
+            <a class="page-link" href="<%= hasPrevPage ? '/?page=' + prevPage + '&limit=' + limit : '#' %>">
+              Previous
             </a>
 
-            <a
-              href="/update_contact/<%= c._id %>"
-              class="btn btn-warning btn-sm"
-            >
-              <i class="bi bi-pencil-square"></i>
-            </a>
+          </li>
 
-            <a
-              href="/delete_contact/<%= c._id %>"
-              class="btn btn-danger btn-sm"
-              onclick="return confirm('Delete this contact?')"
-            >
-              <i class="bi bi-trash"></i>
-            </a>
+          <!-- Page Numbers -->
 
-          </td>
-        </tr>
+          <% for(let i=1; i <=totalPages; i++) { %>
 
-        <% }) %>
+            <li class="page-item <%= page === i ? 'active' : '' %>">
 
-      </tbody>
+              <a class="page-link" href="/?page=<%= i %>&limit=<%= limit %>">
+                <%= i %>
+              </a>
 
-    </table>
+            </li>
 
-  </div>
+            <% } %>
 
-  <% } else { %>
+              <!-- Next -->
 
-  <div class="alert alert-info text-center">
-    <h5>No Contacts Found</h5>
-    <p class="mb-0">
-      Click "Add Contact" to create your first contact.
-    </p>
-  </div>
+              <li class="page-item <%= !hasNextPage ? 'disabled' : '' %>">
 
-  <% } %>
+                <a class="page-link" href="<%= hasNextPage ? '/?page=' + nextPage + '&limit=' + limit : '#' %>">
+                  Next
+                </a>
 
-</div>
+              </li>
 
-<!-- Footer -->
-<div class="card-footer d-flex justify-content-between align-items-center">
+        </ul>
 
-  <div>
-    Total Contacts :
-    <strong><%= totalDocs %></strong>
-  </div>
+      </nav>
 
-  <nav>
+    </div>
 
-    <ul class="pagination mb-0">
-
-      <!-- Previous -->
-
-      <li class="page-item <%= !hasPrevPage ? 'disabled' : '' %>">
-
-        <a
-          class="page-link"
-          href="<%= hasPrevPage ? '/?page=' + prevPage + '&limit=' + limit : '#' %>"
-        >
-          Previous
-        </a>
-
-      </li>
-
-      <!-- Page Numbers -->
-
-      <% for(let i = 1; i <= totalPages; i++) { %>
-
-      <li class="page-item <%= page === i ? 'active' : '' %>">
-
-        <a
-          class="page-link"
-          href="/?page=<%= i %>&limit=<%= limit %>"
-        >
-          <%= i %>
-        </a>
-
-      </li>
-
-      <% } %>
-
-      <!-- Next -->
-
-      <li class="page-item <%= !hasNextPage ? 'disabled' : '' %>">
-
-        <a
-          class="page-link"
-          href="<%= hasNextPage ? '/?page=' + nextPage + '&limit=' + limit : '#' %>"
-        >
-          Next
-        </a>
-
-      </li>
-
-    </ul>
-
-  </nav>
-
-</div>
- 
 
   </div>
 

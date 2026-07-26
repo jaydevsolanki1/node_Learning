@@ -54,7 +54,8 @@ import AuthBcryptRouter from "./routes/AuthBcrypt.route.js";
 import cookieParser from "cookie-parser";
 import cookiesRouter from "./routes/cookies.route.js";
 import cookiesMiddleware from "./middleware/11.Cookies.middleware.js";
-
+import csrfRouter from "./routes/csrf.route.js";
+import csrfErrorMiddleware from "./middleware/13.csrfError.middleware.js";
 /* ==========================================================================
    CREATE EXPRESS APP
 ========================================================================== */
@@ -216,8 +217,10 @@ app.use(applicationMiddleware);
    ROUTES
 ========================================================================== */
 
-// Cookies Routes
+// csrf Routes
+app.use("/", csrfRouter);
 
+// Cookies Routes
 // without use env file -------------->
 app.use(cookieParser("mySuperSecretKey"));
 // with use env file -------------->
@@ -243,6 +246,15 @@ app.use("/", middlewareRoute);
 
 // Contact CRUD Routes
 app.use("/", router);
+
+// ==========================
+// CSRF Error Middleware
+// ==========================
+
+app.use(csrfErrorMiddleware);
+
+// Global Error Middleware
+app.use(errorMiddleware);
 
 /* ==========================================================================
    ERROR HANDLER

@@ -1,55 +1,253 @@
-<!-- Include Header -->
+<div class="container py-5">
 
-<div class="container mt-5">
-  <h1 class="text-center">Contact Us</h1>
-  <form
-    class="mx-auto mt-4"
-    style="max-width: 600px"
-    action="/submit"
-    method="POST"
-  >
-    <div class="mb-3">
-      <label class="form-label">Name</label>
-      <input
-        type="text"
-        name="name"
-        class="form-control"
-        placeholder="Enter your name"
-        value="<%= name ? name : '' %>"
-      />
+  <!-- ================= HERO SECTION ================= -->
+
+  <div class="text-center mb-5">
+
+    <h1 class="display-4 fw-bold">
+      Contact Me
+    </h1>
+
+    <p class="lead text-muted">
+      Have a project idea, internship opportunity, freelance work, or just want to say hello?
+      I'd love to hear from you.
+    </p>
+
+  </div>
+
+
+
+  <div class="row g-5">
+
+    <!-- ================= LEFT SIDE ================= -->
+
+    <div class="col-lg-5">
+
+      <div class="card shadow-lg border-0 h-100">
+
+        <div class="card-body p-4">
+
+          <h3 class="mb-4">
+            Let's Connect 👋
+          </h3>
+
+          <p class="text-muted">
+
+            I'm always open to discussing new projects,
+            internships, collaborations, and learning opportunities.
+
+          </p>
+
+          <hr>
+
+          <h5 class="mt-4">
+            📧 Email
+          </h5>
+
+          <p class="text-muted">
+            jaydevsolanki673@gmail.com
+          </p>
+
+          <h5>
+            📍 Location
+          </h5>
+
+          <p class="text-muted">
+            Rajkot, Gujarat, India
+          </p>
+
+          <h5>
+            💻 Specialization
+          </h5>
+
+          <p class="text-muted">
+            MERN Stack Development
+          </p>
+
+          <h5>
+            🚀 Skills
+          </h5>
+
+          <div class="d-flex flex-wrap gap-2">
+
+            <span class="badge bg-primary">React</span>
+
+            <span class="badge bg-success">Node.js</span>
+
+            <span class="badge bg-dark">Express.js</span>
+
+            <span class="badge bg-warning text-dark">MongoDB</span>
+
+            <span class="badge bg-info text-dark">JavaScript</span>
+
+            <span class="badge bg-secondary">Bootstrap</span>
+
+          </div>
+
+          <hr>
+
+          <p class="text-muted mt-4">
+
+            Thank you for visiting my portfolio.
+            Feel free to contact me anytime.
+
+          </p>
+
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="mb-3">
-      <label class="form-label">Email</label>
-      <input
-        type="email"
-        name="email"
-        class="form-control"
-        placeholder="Enter your email"
-        value="<%= email ? email : '' %>"
-      />
+
+
+    <!-- ================= CONTACT FORM ================= -->
+
+    <div class="col-lg-7">
+
+      <div class="card shadow-lg border-0">
+
+        <div class="card-body p-5">
+
+          <h2 class="mb-4">
+
+            Send Message
+
+          </h2>
+
+          <form action="/submit" method="POST">
+
+            <div class="mb-4">
+
+              <label class="form-label fw-semibold">
+                Full Name
+              </label>
+
+              <input type="text" name="name" class="form-control form-control-lg" placeholder="Enter your full name"
+                value="<%= name ? name : '' %>" required>
+
+            </div>
+
+            <div class="mb-4">
+
+              <label class="form-label fw-semibold">
+                Email Address
+              </label>
+
+              <input type="email" name="email" class="form-control form-control-lg" placeholder="Enter your email"
+                value="<%= email ? email : '' %>" required>
+
+            </div>
+
+            <div class="mb-4">
+
+              <label class="form-label fw-semibold">
+                Message
+              </label>
+
+              <textarea name="message" rows="6" class="form-control" placeholder="Write your message here..."
+                required><%= message ? message : '' %></textarea>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg w-100">
+
+              Send Message 🚀
+
+            </button>
+
+            <% if(success){ %>
+
+              <div class="alert alert-success mt-4">
+
+                <%= success %>
+
+              </div>
+
+              <% } %>
+
+          </form>
+
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="mb-3">
-      <label class="form-label">Message</label>
-      <textarea
-        name="message"
-        class="form-control"
-        rows="4"
-        placeholder="Your message"
-      >
-       <%= message ? message : '' %>
-    </textarea
-      >
+  </div>
+
+
+
+  <!-- ================= WHY CONTACT ================= -->
+
+  <div class="row mt-5">
+
+    <div class="col-md-4">
+
+      <div class="card text-center shadow-sm border-0 h-100">
+
+        <div class="card-body">
+
+          <h2>💼</h2>
+
+          <h4>Freelancing</h4>
+
+          <p class="text-muted">
+
+            Available for freelance web development projects.
+
+          </p>
+
+        </div>
+
+      </div>
+
     </div>
 
-    <button type="submit" class="btn btn-primary w-100">Send Message</button>
-    <div>
-      <% if (success) { %>
-      <div class="alert alert-success mt-3"><%= success %></div>
-      <% } %>
-    </div>
-  </form>
+    <div class="col-md-4">
 
-  <!-- Include Footer -->
+      <div class="card text-center shadow-sm border-0 h-100">
+
+        <div class="card-body">
+
+          <h2>🤝</h2>
+
+          <h4>Collaboration</h4>
+
+          <p class="text-muted">
+
+            Open to collaboration on exciting ideas and startups.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+      <div class="card text-center shadow-sm border-0 h-100">
+
+        <div class="card-body">
+
+          <h2>📚</h2>
+
+          <h4>Learning</h4>
+
+          <p class="text-muted">
+
+            Always interested in learning new technologies and building amazing applications.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </div>
